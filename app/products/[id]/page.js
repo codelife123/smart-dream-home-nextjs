@@ -2,6 +2,7 @@
 
 import { useMemo, useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
+import Link from "next/link";
 import { PRODUCTS } from "../../data/products";
 
 export default function ProductDetail() {
@@ -54,9 +55,9 @@ export default function ProductDetail() {
       <div className="max-w-5xl mx-auto p-6">
         <div className="flex items-center justify-between mb-6">
           <button className="text-sm text-blue-600" onClick={() => router.push("/")}>← Back to Home</button>
-          <a href="/" className="relative bg-white p-2 rounded-full shadow" title="Open cart on Home">
+          <Link href="/" className="relative bg-white p-2 rounded-full shadow" title="Open cart on Home">
             <span role="img" aria-label="cart">🛒</span>
-          </a>
+          </Link>
         </div>
 
         <div className="bg-white rounded-2xl p-6 shadow">
