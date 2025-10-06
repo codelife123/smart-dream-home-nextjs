@@ -91,6 +91,47 @@ export default function ProductDetail() {
             </div>
           </div>
         </div>
+
+        {(product.description_en || product.description_si || product.youtubevideo || product.youtubeVideo) && (
+          <div className="bg-white rounded-2xl p-6 shadow mt-6">
+            {(() => {
+              const yt = product.youtubevideo || product.youtubeVideo || "";
+              const getEmbed = (url) => {
+                if(!url) return "";
+                try {
+                  if(url.includes('/embed/')) return url;
+                  const u = new URL(url);
+                  if(u.hostname.includes('youtu.be')) return `https://www.youtube.com/embed/${u.pathname.replace('/', '')}`;
+                  const v = u.searchParams.get('v');
+                  if(v) return `https://www.youtube.com/embed/${v}`;
+                  return url;
+                } catch { return url; }
+              };
+              const embed = getEmbed(yt);
+              return embed ? (
+                <div className="mb-6">
+                  <div className="relative" style={{paddingBottom:'56.25%', height:0, overflow:'hidden', borderRadius:12}}>
+                    <iframe src={embed} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{position:'absolute', top:0, left:0, width:'100%', height:'100%'}}></iframe>
+                  </div>
+                </div>
+              ) : null;
+            })()}
+
+            {product.description_en ? (
+              <div className="mb-6">
+                <h2 className="text-xl font-bold mb-2">Description</h2>
+                <p className="whitespace-pre-line text-gray-800">{product.description_en}</p>
+              </div>
+            ) : null}
+
+            {product.description_si ? (
+              <div>
+                <h2 className="text-xl font-bold mb-2">විස්තරය</h2>
+                <p className="whitespace-pre-line text-gray-800">{product.description_si}</p>
+              </div>
+            ) : null}
+          </div>
+        )}
       </div>
     </div>
   );
