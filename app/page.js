@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { PRODUCTS } from "./data/products";
 
 export default function Home() {
   const router = useRouter();
+  const [modalImgSrc, setModalImgSrc] = useState("");
   useEffect(() => {
     const slides = document.querySelectorAll('#slides > div');
     let currentSlide = 0;
@@ -99,7 +101,6 @@ export default function Home() {
     const modalName = document.getElementById('modalName');
     const modalPrice = document.getElementById('modalPrice');
     const modalDesc = document.getElementById('modalDesc');
-    const modalImg = document.getElementById('modalImg');
     const variantWrap = document.getElementById('variantWrap');
     const variantSelect = document.getElementById('variantSelect');
     const modalQty = document.getElementById('modalQty');
@@ -122,7 +123,7 @@ export default function Home() {
       } catch(_){ /* noop */ }
     });
 
-    const onCloseModal = () => { productModal.classList.add('hidden'); productModal.classList.remove('flex','items-center','justify-center'); };
+    const onCloseModal = () => { productModal.classList.add('hidden'); productModal.classList.remove('flex','items-center','justify-center'); setModalImgSrc(""); };
     closeProductModal?.addEventListener('click', onCloseModal);
     productModal?.addEventListener('click', e=>{ if(e.target === productModal){ onCloseModal(); } });
 
@@ -327,7 +328,9 @@ export default function Home() {
         <div className="bg-white rounded-2xl p-4 max-w-2xl w-full relative">
           <button id="closeProductModal" className="absolute top-3 right-3 text-gray-700 font-bold">✖</button>
           <div className="flex flex-col md:flex-row gap-4">
-            <img id="modalImg" alt="product" className="w-full md:w-48 h-48 object-cover rounded-lg" />
+            {modalImgSrc ? (
+              <Image id="modalImg" src={modalImgSrc} alt="product" width={192} height={192} className="w-full md:w-48 h-48 object-cover rounded-lg" />
+            ) : null}
             <div className="flex-1">
               <h3 id="modalName" className="text-2xl font-bold mb-2"></h3>
               <p id="modalPrice" className="text-green-600 font-semibold mb-3"></p>

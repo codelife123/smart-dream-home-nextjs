@@ -3,6 +3,7 @@
 import { useMemo, useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { PRODUCTS } from "../../data/products";
 
 export default function ProductDetail() {
@@ -63,7 +64,7 @@ export default function ProductDetail() {
         <div className="bg-white rounded-2xl p-6 shadow">
           <div className="flex flex-col md:flex-row gap-6">
             {product.images && product.images[0] ? (
-              <img src={product.images[0]} alt={product.name} className="w-full md:w-80 h-80 object-cover rounded" />
+              <Image src={product.images[0]} alt={product.name} width={320} height={320} className="w-full md:w-80 h-80 object-cover rounded" />
             ) : null}
             <div className="flex-1">
               <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
