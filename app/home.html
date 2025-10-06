@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Smart Dream Home — Shop</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  .tab { transition: transform .18s, background-color .18s; }
+  .tab:hover { transform: scale(1.04); }
+  .tab-active { background-color: #059669 !important; }
+  #mobileTabs { display:none; transition: transform .28s, opacity .28s; }
+  #mobileTabs.show { display:flex; flex-direction:column; opacity:1; transform:translateY(0); }
+  .hero-text .fade { opacity:1; transition: opacity 1s; }
+  .hero-text.fade-out .fade { opacity:0; }
+  .opacity-0{opacity:0} .opacity-100{opacity:1}
+  .duration-1000{transition-duration:1000ms}
+  /* modal & overlays */
+  #productModal, #enquiryOverlay { display:none; }
+  /* cart badge */
+  #cartCount { position: absolute; top: -6px; right: -6px; font-size: 12px; }
+</style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- NAV / CART ICON -->
+<header class="fixed top-4 left-4 z-50">
+  <a href="#home" class="bg-white px-3 py-2 rounded-lg shadow">Smart Dream Home</a>
+</header>
+
+<!-- Cart Icon (top-right) -->
+<div class="fixed top-4 right-4 z-50">
+  <button id="openCartBtn" class="relative bg-white p-3 rounded-full shadow">
+    🛒
+    <span id="cartCount" class="bg-red-500 text-white rounded-full px-1" style="position:absolute; top:-6px; right:-6px; font-size:12px;">0</span>
+  </button>
+</div>
+
+<!-- HERO / SLIDES -->
+<section id="home" class="relative w-full h-screen overflow-hidden">
+  <div id="slides" class="absolute inset-0 w-full h-full z-0">
+      <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image:url('images/home/slide1.jpg');"></div>
+      <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image:url('images/home/slide4.jpeg');"></div>
+      <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image:url('images/home/slide5.jpg');"></div>
+    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image:url('images/home/slide3.jpeg');"></div>
+    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image:url('images/home/slide2.jpeg');"></div>
+  </div>
+
+  <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
+
+  <div class="relative z-20 flex flex-col items-center justify-center h-full text-center text-white px-6 hero-text">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3 fade">Welcome to Smart Dream Home</h1>
+    <p class="text-lg md:text-xl mb-6 fade">Island-wide smart devices — quality products with warranty.</p>
+    <a href="#products" class="inline-block bg-white text-green-600 font-bold px-6 py-3 rounded-full shadow fade">View Products</a>
+  </div>
+
+  <!-- Sticky desktop tabs -->
+  <div id="tabs" class="hidden md:flex flex-col space-y-4 fixed top-1/3 right-6 z-30">
+    <a href="#home" class="tab bg-green-600 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Home</a>
+      <a href="#products" class="tab bg-red-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Products</a>
+    <a href="about.html" class="tab bg-blue-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">About Us</a>
+    <a href="#warranty" class="tab bg-yellow-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Warranty & Returns</a>
+    <a href="#services" class="tab bg-purple-600 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Our Services</a>
+  </div>
+
+  <!-- Mobile floating button -->
+  <div class="md:hidden fixed bottom-4 right-4 z-50">
+    <button id="mobileBtn" class="bg-green-600 text-white p-3 rounded-full shadow-lg focus:outline-none">☰</button>
+    <div id="mobileTabs" class="hide bg-white rounded-xl shadow-lg p-2 mt-2">
+      <a href="#home" class="tab bg-green-600 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Home</a>
+        <a href="#products" class="tab bg-red-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Products</a>
+      <a href="about.html" class="tab bg-blue-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">About Us</a>
+      <a href="#warranty" class="tab bg-yellow-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Warranty & Returns</a>
+      <a href="#services" class="tab bg-purple-600 text-white px-4 py-2 rounded-lg text-center shadow">Our Services</a>
+    </div>
+  </div>
+
+  <!-- slideshow dots -->
+  <div id="dots" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+    <button class="w-3 h-3 rounded-full bg-gray-300 dot"></button>
+    <button class="w-3 h-3 rounded-full bg-gray-300 dot"></button>
+    <button class="w-3 h-3 rounded-full bg-gray-300 dot"></button>
+    <button class="w-3 h-3 rounded-full bg-gray-300 dot"></button>
+  </div>
+</section>
+
+
+
+<!-- PRODUCTS -->
+<section id="products" class="max-w-7xl mx-auto py-12 px-4">
+  <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+  <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+</section>
+
+
+
+<!-- ABOUT -->
+<section id="about" class="max-w-6xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold text-center mb-6">About Us</h2>
+    <p class="text-center text-gray-700">Smart Dream Home supplies a wide range of smart home devices across Sri Lanka. Support & warranty available.</p>
+</section>
+
+<!-- WARRANTY -->
+<section id="warranty" class="max-w-6xl mx-auto py-12 px-4 bg-gray-50">
+    <h2 class="text-3xl font-bold text-center mb-6">Warranty & Returns</h2>
+    <p class="text-center text-gray-700">Warranty ranges from 6 to 24 months depending on product. Contact via WhatsApp for quick support.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="max-w-6xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold text-center mb-6">Our Services</h2>
+    <ul class="text-center text-gray-700 space-y-2">
+        <li>• Installation of smart devices</li>
+        <li>• Island-wide delivery & support</li>
+        <li>• Online ordering & WhatsApp assistance</li>
+        <li>• Warranty & maintenance</li>
+    </ul>
+</section>
+
+
+
+
+<!-- PRODUCT MODAL -->
+<div id="productModal" class="fixed inset-0 bg-black bg-opacity-60 hidden z-50 items-center justify-center p-4">
+  <div class="bg-white rounded-2xl p-4 max-w-2xl w-full relative">
+    <button id="closeProductModal" class="absolute top-3 right-3 text-gray-700 font-bold">✖</button>
+    <div class="flex flex-col md:flex-row gap-4">
+      <img id="modalImg" src="" alt="product" class="w-full md:w-48 h-48 object-cover rounded-lg">
+      <div class="flex-1">
+        <h3 id="modalName" class="text-2xl font-bold mb-2"></h3>
+        <p id="modalPrice" class="text-green-600 font-semibold mb-3"></p>
+        <p id="modalDesc" class="text-gray-700 mb-4"></p>
+
+        <!-- For switches: variant selector -->
+        <div id="variantWrap" class="mb-3 hidden">
+          <label class="block text-sm font-medium mb-1">Variant:</label>
+          <select id="variantSelect" class="border p-2 rounded w-full">
+            <!-- options inserted dynamically -->
+          </select>
+        </div>
+
+        <div class="flex items-center gap-3 mb-3">
+          <label class="text-sm">Qty:</label>
+          <input id="modalQty" type="number" min="1" value="1" class="w-20 p-1 border rounded">
+        </div>
+
+        <div class="flex gap-3">
+          <button id="addToCartBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">🛒 Add to Cart</button>
+          <button id="openEnquiryFromModal" class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Enquiry Form</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART SUMMARY PAGE (section) -->
+<section id="cart" class="hidden max-w-4xl mx-auto py-12 px-4">
+  <h2 class="text-2xl font-bold mb-4">Cart Summary</h2>
+  <div id="cartItems" class="space-y-3 mb-4"></div>
+  <div class="text-right font-bold text-xl mb-6">Total: Rs. <span id="cartTotal">0</span></div>
+
+  <h3 class="text-lg font-semibold mb-2">Customer information</h3>
+  <form id="checkoutForm" class="grid grid-cols-1 gap-3 max-w-xl">
+    <input id="custName" type="text" placeholder="Your name" class="p-2 border rounded" required>
+    <input id="custPhone" type="text" placeholder="Phone (e.g. 0764511276)" class="p-2 border rounded" required>
+    <textarea id="custAddress" placeholder="Address / Notes" class="p-2 border rounded" rows="3" required></textarea>
+    <div class="flex gap-2">
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Confirm Order</button>
+      <button type="button" id="backToShop" class="bg-gray-200 px-4 py-2 rounded">Continue Shopping</button>
+    </div>
+  </form>
+
+  <div id="orderSuccess" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded">
+    <h4 class="font-bold">Order confirmed — thank you!</h4>
+    <p id="orderSummaryText" class="text-sm mt-2"></p>
+  </div>
+</section>
+
+<!-- WHATSAPP FLOAT -->
+<a id="whatsappFloat" href="https://wa.me/94764511276" target="_blank"
+   class="fixed bottom-6 left-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 flex items-center justify-center">
+  💬
+</a>
+
+<!-- ENQUIRY OVERLAY -->
+<div id="enquiryOverlay" class="fixed inset-0 bg-black bg-opacity-60 hidden z-50 items-center justify-center p-4">
+  <div class="bg-white rounded-2xl p-6 w-full max-w-lg relative">
+    <button id="closeEnquiry" class="absolute top-3 right-3 text-gray-700 font-bold">✖</button>
+    <h3 class="text-xl font-bold mb-3">Send Enquiry</h3>
+    <form id="enquiryForm" class="grid gap-3">
+      <input id="enqName" type="text" placeholder="ඔබේ නම / Your name" class="p-2 border rounded" required>
+      <input id="enqPhone" type="text" placeholder="Phone" class="p-2 border rounded" required>
+      <select id="enqProduct" class="p-2 border rounded">
+        <option value="">Select product (optional)</option>
+      </select>
+      <textarea id="enqMsg" rows="4" placeholder="Message" class="p-2 border rounded" required></textarea>
+      <div class="flex gap-2">
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Send via WhatsApp</button>
+        <button type="button" id="cancelEnquiry" class="bg-gray-200 px-4 py-2 rounded">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ---------- Slideshow ---------- */
+const slides = document.querySelectorAll('#slides > div');
+let currentSlide = 0;
+function showSlide(idx){
+  slides.forEach((s,i)=>{ s.classList.toggle('opacity-100', i===idx); s.classList.toggle('opacity-0', i!==idx); });
+  currentSlide = idx;
+}
+function nextSlide(){ showSlide((currentSlide+1) % slides.length); }
+setInterval(nextSlide, 5000);
+showSlide(0);
+document.querySelectorAll('#dots .dot').forEach((d,i)=> d.addEventListener('click', ()=> showSlide(i)));
+
+/* ---------- Mobile tabs toggle ---------- */
+const mobileBtn = document.getElementById('mobileBtn');
+const mobileTabs = document.getElementById('mobileTabs');
+mobileBtn && mobileBtn.addEventListener('click', e => { e.stopPropagation(); mobileTabs.classList.toggle('show'); mobileTabs.classList.toggle('hide'); });
+document.addEventListener('click', e => { if(mobileTabs && mobileTabs.classList.contains('show') && !mobileTabs.contains(e.target) && e.target !== mobileBtn){ mobileTabs.classList.remove('show'); mobileTabs.classList.add('hide'); } });
+
+/* ---------- Smooth scroll + active tab ---------- */
+const sections = document.querySelectorAll('section');
+const desktopTabs = document.querySelectorAll('#tabs .tab');
+const mobTabs = document.querySelectorAll('#mobileTabs .tab');
+function highlightTabs(){
+  let current='home';
+  sections.forEach(sec=>{ if(window.pageYOffset >= sec.offsetTop - 120) current = sec.id; });
+  desktopTabs.forEach(tab=>{ tab.classList.toggle('tab-active', tab.getAttribute('href') === '#'+current); });
+  mobTabs.forEach(tab=>{ tab.classList.toggle('tab-active', tab.getAttribute('href') === '#'+current); });
+}
+window.addEventListener('scroll', highlightTabs);
+highlightTabs();
+document.querySelectorAll('#tabs .tab, #mobileTabs .tab').forEach(tab=>{
+  tab.addEventListener('click', e=>{
+    const target = document.querySelector(tab.getAttribute('href'));
+    if(target){ e.preventDefault(); window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' }); }
+    if(mobileTabs.classList.contains('show')){ mobileTabs.classList.remove('show'); mobileTabs.classList.add('hide'); }
+  });
+});
+
+/* ---------- Products dataset + dynamic render ---------- */
+const PRODUCTS = [
+	{
+		id: 'p1',
+		name: 'Smart Touch Panel Switch',
+		desc: 'Smart touch panel switch with WiFi, app scheduling, voice control and elegant finish. 12 months warranty.',
+		images: ['images/smart-switch/image1.webp'],
+        description_en: '✨ Upgrade Your Home with a Smart Switch! ✨\n' +
+			'Tired of forgetting to turn off the lights? Want to control your home lighting with just your voice or phone? A Smart Wi-Fi Light Switch is Control from Anywhere – Turn your lights on/off remotely using your phone.\n' +
+			'\n' +
+			' ✅ Hands-Free Convenience – Works with Alexa, Google Assistant & Siri.\n' +
+			'\n' +
+			' ✅ Set Schedules & Timers – Automate lighting for energy savings. \n' +
+			'\n' +
+			'✅ Sleek & Modern Design – Enhances any room with a stylish touch panel. \n' +
+			'\n' +
+			'✅ Easy to Install – Upgrade your home in minutes!\n' +
+			'Make life easier and smarter! Get your Smart Switch today and enjoy the convenience of smart living. 🏡✨\n' +
+			'Contact us -\n' +
+			'\n' +
+			'\n' +
+			'✅  1 Gan-2999/\n' +
+			'✅ 2 Gan-3399/=\n' +
+			'✅ 3 Gan-3799/=\n' +
+			'✅ 4 Gan-3999/=',
+        description_si: 'කාර්යබහුල ඔබ වෙනුවෙන් ලෝකයේ කොතන සිටියත් පාලනය කළ හැකි ස්මාට් ස්විච් wifi දැන්    පහසු මිලට වගකීමක් සහිතව අපගෙන් මිලදී ගැනීමේ හැකියාව ඇත.\n' +
+			'\n' +
+			'✅1 Gan-2999/\n' +
+			'✅2 Gan-3399/=\n' +
+			'✅3 Gan-3799/=\n' +
+			'✅4 Gan-3999/=\n' +
+			'Smart switch ඔබ භාවිතා කළ යුත්තේ ඇයි\n' +
+			'\n' +
+			'🟢ඔබගේ කටහඬ මගින් පාලනය කළ හැක\n' +
+			'\n' +
+			'🟢නිශ්චිත වෙලාවක On කිරීම සහ නිශ්චිත වෙලාවක OFF කිරීම ස්වයංක්‍රීයව කළ හැක\n' +
+			'\n' +
+			'🟢ඔබ නිවසේ කාර්යාලයේ කොතැන සිටියත් නිවසේ ඇති උපකරණ ඔබට  දුරකථනය මගින් පාලනය කළ හැක on/off\n' +
+			'\n' +
+			'🟢ඔබභාවිතා නොකරන නිවසක වුවද සවිකර විට නිවසේ සිට එහි ඇති විදුලි බල්බ ද පහසුවෙන් පාලනය කළ හැක\n' +
+			'\n' +
+			'🟢ඔබ විදෙස් ගතව සිටියද මෙම switch පහසුවෙන්ම ඔබගේ ජංගම දුරකථනය හරහා පාලනය කළ හැක.\n' +
+			'\n' +
+			'🟢ටච් පැනලයක් සහිත අනර්ඝ නිමාවකින් යුක්තවෙයි\n' +
+			'\n' +
+			'වැඩි විස්තර දැනගැනීම සඳහා අපව සම්බන්ධ කරගන්න\n',
+		variants: [{label: '1 Gang', price: 2999}, {label: '2 Gang', price: 3399}, {
+			label: '3 Gang',
+			price: 3799
+		}, {label: '4 Gang', price: 3999}]
+	},
+	{
+		id: 'p2',
+		name: 'Smart Push Button Switch',
+		desc: 'Push-button smart switch with relay, WiFi control and LED indicator. 12 months warranty.',
+		images: ['images/smart-push-buttons/image1.jpg'],
+		variants: [{label: '1 Gang', price: 3700}, {label: '2 Gang', price: 3900}, {
+			label: '3 Gang',
+			price: 4300
+		}]
+	},
+	{
+		id: 'p3',
+		name: 'Smart MCB',
+		desc: 'Smart MCB with remote trip alerts, current monitoring and overload protection. 18 months warranty.',
+		images: ['images/smart-mcb/image1.jpg'],
+		price: 6000
+	},
+	{
+		id: 'p4',
+		name: 'Smart Energy meter(RCCB)',
+		desc: 'Earth leakage (RCCB) with smart notifications and test. 18 months warranty.',
+		images: ['images/smart-rccb/image1.webp'],
+		price: 8500
+	},
+	{
+		id: 'p5',
+		name: 'Moes Smart Door Lock',
+		desc: 'Moes smart door lock: fingerprint, PIN, card, app access, logs, backup keys. 24 months warranty.',
+		images: ['images/smart-mose-doorlock/image1.png'],
+		price: 42000
+	},
+	{
+		id: 'p6',
+		name: 'Smart IR Control',
+		desc: 'Universal IR controller for AC/TV/set-top boxes — add IR devices to your smart home.',
+		images: ['images/smart-ir/image1.jpg'],
+		price: 2500
+	},
+	{
+		id: 'p7',
+		name: 'Smart Socket',
+		desc: 'Smart socket with power monitoring and remote on/off control.',
+		images: ['images/smart-socket/image1.jpg'],
+		price: 2800
+	},
+	{
+		id: 'p8',
+		name: 'Smart Socket Base',
+		desc: 'Smart socket base that supports different plugs, scheduling & remote control.',
+		images: ['images/smart-socket-base/image1.webp'],
+		price: 4800
+	},
+	{
+		id: 'p9',
+		name: 'Moes Smart Fan Controller',
+		desc: 'Moes fan controller with speed presets, remote and app control.',
+		images: ['images/mose-fan-controller/image1.jpg'],
+		price: 5500
+	},
+	{
+		id: 'p10',
+		name: 'Smart Soil Tester Sensor',
+		desc: 'Soil moisture & nutrient sensor with app alerts — ideal for smart gardening.',
+		images: ['images/smart-soil-tester-sensor/image1.png'],
+		price: 4800
+	},
+	{
+		id: 'p11',
+		name: 'Smart Valve',
+		desc: 'Motorized smart valve for irrigation — schedule and control remotely.',
+		images: ['images/smart-valve/image1.jpg'],
+		price: 7800
+	},
+	{
+		id: 'p12',
+		name: 'Smart Mini Switch',
+		desc: 'Mini smart switch 16A — WiFi + Tuya support, voice control, energy monitoring.',
+		images: ['images/smart-mini-switch/image1.jpg'],
+		price: 1600
+	},
+	{
+		id: 'p13',
+		name: 'Smart Garage Controller',
+		desc: 'Smart garage controller to open/close doors remotely with safety sensors.',
+		images: ['images/smart-garage-controller/image1.png'],
+		price: 5500
+	},
+	{
+		id: 'p14',
+		name: 'Intelligent Light Control System',
+		desc: 'Full intelligent lighting control with scenes, dimming, presence detection and remote management.',
+		images: ['images/smart-light-controller/image1.jpg'],
+		price: 14500
+	},
+	{
+		id: 'p15',
+		name: 'Smart Door Lock + Face Unlocking',
+		desc: 'Advanced smart door locking system with keyless entry, remote access, real-time monitoring, and enhanced security management.',
+		images: ['images/smart-door-lock/image1.jpeg'],
+		price: 54000
+	},
+	{
+		id: 'p16',
+		name: 'Smart Door Bell',
+		desc: 'Smart doorbell with HD video, two-way communication, motion detection and mobile notifications for enhanced home security.',
+		images: ['images/smart-door-bell/image1.jpeg'],
+		price: 5000
+	}
+];
+
+function formatPriceRange(p){
+  if(Array.isArray(p.variants) && p.variants.length){
+    const prices = p.variants.map(v=>Number(v.price)).sort((a,b)=>a-b);
+    return `Rs. ${prices[0].toLocaleString()} - ${prices[prices.length-1].toLocaleString()}`;
+  }
+  return p.price ? `Rs. ${Number(p.price).toLocaleString()}` : 'Contact for price';
+}
+
+function renderProducts(){
+  const grid = document.getElementById('productGrid');
+  if(!grid) return;
+  grid.innerHTML = '';
+  PRODUCTS.forEach(p=>{
+    const card = document.createElement('div');
+    card.className = 'bg-white rounded-2xl shadow p-4 text-center cursor-pointer product-card';
+    card.setAttribute('data-id', p.id);
+    card.setAttribute('data-name', p.name);
+    card.setAttribute('data-img', (p.images && p.images[0]) || '');
+    card.setAttribute('data-desc', p.desc || '');
+    if(Array.isArray(p.variants) && p.variants.length){
+      // map common 1-4 gang labels to g1..g4 if present
+      p.variants.forEach(v=>{
+        const label = (v.label||'').toLowerCase();
+        if(label.includes('1')) card.setAttribute('data-price-g1', String(v.price));
+        if(label.includes('2')) card.setAttribute('data-price-g2', String(v.price));
+        if(label.includes('3')) card.setAttribute('data-price-g3', String(v.price));
+        if(label.includes('4')) card.setAttribute('data-price-g4', String(v.price));
+      });
+    } else if(p.price){
+      card.setAttribute('data-price', String(p.price));
+    }
+
+    const imgSrc = (p.images && p.images[0]) || '';
+    const priceText = Array.isArray(p.variants) && p.variants.length
+      ? `${formatPriceRange(p)} (1-4 gang)`
+      : formatPriceRange(p);
+
+    card.innerHTML = `
+      <img src="${imgSrc}" alt="" class="mx-auto mb-3 rounded">
+      <h3 class="font-bold text-lg">${p.name}</h3>
+      <p class="text-gray-600">${priceText}</p>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+renderProducts();
+
+/* ---------- Product modal logic ---------- */
+const productCards = document.querySelectorAll('.product-card');
+const productModal = document.getElementById('productModal');
+const closeProductModal = document.getElementById('closeProductModal');
+const modalName = document.getElementById('modalName');
+const modalPrice = document.getElementById('modalPrice');
+const modalDesc = document.getElementById('modalDesc');
+const modalImg = document.getElementById('modalImg');
+const variantWrap = document.getElementById('variantWrap');
+const variantSelect = document.getElementById('variantSelect');
+const modalQty = document.getElementById('modalQty');
+const addToCartBtn = document.getElementById('addToCartBtn');
+const openEnquiryFromModal = document.getElementById('openEnquiryFromModal');
+
+let currentProduct = null; // object stored for modal
+
+productCards.forEach(card=>{
+  card.addEventListener('click', ()=>{
+    const id = card.dataset.id || card.getAttribute('data-id') || '';
+    if(!id) return;
+    try {
+      const selected = PRODUCTS.find(p=>p.id===id);
+      if(selected){ sessionStorage.setItem('sdh_selected_product', JSON.stringify(selected)); }
+    } catch(_) {}
+    window.location.href = `detail.html?id=${encodeURIComponent(id)}`;
+  });
+});
+
+// Replace existing two buttons in each product card with a single Add to Cart button
+productCards.forEach(card=>{
+  // remove existing buttons inside the card (e.g., Checkout / Close)
+  card.querySelectorAll('button').forEach(b=> b.remove());
+
+  const btn = document.createElement('button');
+  btn.className = 'addToCartCard bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700';
+  btn.textContent = '🛒 Add to Cart';
+
+  btn.addEventListener('click', (e)=>{
+    e.stopPropagation(); // prevent opening the modal
+    const id = card.dataset.id || card.getAttribute('data-id') || '';
+    if(!id) return;
+    try {
+      const selected = PRODUCTS.find(p=>p.id===id);
+      if(selected){ sessionStorage.setItem('sdh_selected_product', JSON.stringify(selected)); }
+    } catch(_) {}
+    window.location.href = `detail.html?id=${encodeURIComponent(id)}`;
+  });
+
+  card.appendChild(btn);
+});
+
+variantSelect && variantSelect.addEventListener('change', ()=>{
+  const v = JSON.parse(variantSelect.value);
+  modalPrice.textContent = `Rs. ${v.price.toLocaleString()} (${v.label})`;
+});
+
+closeProductModal.addEventListener('click', ()=>{ productModal.classList.add('hidden'); productModal.classList.remove('flex','items-center','justify-center'); });
+productModal.addEventListener('click', e=>{ if(e.target === productModal){ productModal.classList.add('hidden'); productModal.classList.remove('flex','items-center','justify-center'); } });
+
+/* ---------- CART (localStorage) ---------- */
+const CART_KEY = 'sdh_cart_v1';
+function loadCart(){ try{ return JSON.parse(localStorage.getItem(CART_KEY)) || []; }catch(e){return [];} }
+function saveCart(cart){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartCount(); }
+function updateCartCount(){ const cart = loadCart(); const count = cart.reduce((s,i)=>s+i.qty,0); document.getElementById('cartCount').textContent = count; }
+updateCartCount();
+
+// add to cart
+addToCartBtn.addEventListener('click', ()=>{
+  if(!currentProduct) return;
+  const qty = Number(modalQty.value) || 1;
+  let price = 0, variantLabel = '';
+  if(!variantWrap.classList.contains('hidden')){
+    const v = JSON.parse(variantSelect.value);
+    price = Number(v.price); variantLabel = v.label;
+  } else {
+    // single price stored in data-price
+    price = Number(currentProduct.raw.price || currentProduct.raw['data-price'] || 0);
+  }
+  const cart = loadCart();
+  // key: id + variantLabel
+  const key = `${currentProduct.id || currentProduct.name}-${variantLabel}`;
+  const existing = cart.find(c=>c.key===key);
+  if(existing){ existing.qty += qty; }
+  else {
+    cart.push({
+      key,
+      id: currentProduct.id || currentProduct.name,
+      name: currentProduct.name,
+      variant: variantLabel,
+      price,
+      qty
+    });
+  }
+  saveCart(cart);
+  // close modal
+  productModal.classList.add('hidden'); productModal.classList.remove('flex','items-center','justify-center');
+  alert('Added to cart');
+});
+
+/* ---------- Open Cart / Summary Page UI ---------- */
+const openCartBtn = document.getElementById('openCartBtn');
+const cartSection = document.getElementById('cart');
+const cartItemsDiv = document.getElementById('cartItems');
+const cartTotalSpan = document.getElementById('cartTotal');
+const backToShop = document.getElementById('backToShop');
+
+function renderCart(){
+  const cart = loadCart();
+  cartItemsDiv.innerHTML = '';
+  let total = 0;
+  if(cart.length===0){
+    cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+  } else {
+    cart.forEach((item, idx)=>{
+      const line = document.createElement('div');
+      line.className = 'p-3 border rounded flex justify-between items-center';
+      const left = document.createElement('div');
+      left.innerHTML = `<div class="font-semibold">${item.name}${item.variant? ' — '+item.variant : ''}</div>
+                        <div class="text-sm text-gray-600">Rs. ${Number(item.price).toLocaleString()} × ${item.qty}</div>`;
+      const right = document.createElement('div');
+      right.innerHTML = `<div class="font-semibold">Rs. ${(Number(item.price)*item.qty).toLocaleString()}</div>
+                         <div class="flex gap-2 mt-2">
+                           <button data-idx="${idx}" class="decrease px-2 py-1 bg-gray-200 rounded">-</button>
+                           <button data-idx="${idx}" class="increase px-2 py-1 bg-gray-200 rounded">+</button>
+                           <button data-idx="${idx}" class="remove px-2 py-1 bg-red-500 text-white rounded">Remove</button>
+                         </div>`;
+      line.appendChild(left); line.appendChild(right);
+      cartItemsDiv.appendChild(line);
+      total += Number(item.price) * item.qty;
+    });
+  }
+  cartTotalSpan.textContent = Math.round(total);
+  // attach controls
+  cartItemsDiv.querySelectorAll('.decrease').forEach(b=> b.addEventListener('click', e=>{
+    const i = Number(e.currentTarget.dataset.idx); const cart = loadCart();
+    if(cart[i].qty>1) cart[i].qty--; else cart.splice(i,1);
+    saveCart(cart); renderCart();
+  }));
+  cartItemsDiv.querySelectorAll('.increase').forEach(b=> b.addEventListener('click', e=>{
+    const i = Number(e.currentTarget.dataset.idx); const cart = loadCart();
+    cart[i].qty++; saveCart(cart); renderCart();
+  }));
+  cartItemsDiv.querySelectorAll('.remove').forEach(b=> b.addEventListener('click', e=>{
+    const i = Number(e.currentTarget.dataset.idx); const cart = loadCart();
+    cart.splice(i,1); saveCart(cart); renderCart();
+  }));
+}
+
+openCartBtn.addEventListener('click', ()=>{
+  // show cart section (scroll)
+  renderCart();
+  document.querySelectorAll('section').forEach(s=> s.classList.add('hidden'));
+  cartSection.classList.remove('hidden');
+  window.scrollTo({ top: cartSection.offsetTop - 20, behavior: 'smooth' });
+});
+
+// continue shopping
+backToShop.addEventListener('click', ()=>{
+  cartSection.classList.add('hidden');
+  document.querySelectorAll('section').forEach(s=> s.classList.remove('hidden'));
+  highlightTabs();
+});
+
+/* ---------- Checkout (summary) ---------- */
+const checkoutForm = document.getElementById('checkoutForm');
+const orderSuccess = document.getElementById('orderSuccess');
+const orderSummaryText = document.getElementById('orderSummaryText');
+
+checkoutForm && checkoutForm.addEventListener('submit', e=>{
+  e.preventDefault();
+  const cart = loadCart();
+  if(cart.length===0){ alert('Cart is empty'); return; }
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const addr = document.getElementById('custAddress').value.trim();
+  const total = cart.reduce((s,i)=>s + Number(i.price)*i.qty, 0);
+  // create order summary text
+  let summary = `Name: ${name}\nPhone: ${phone}\nAddress: ${addr}\n\nOrder:\n`;
+  cart.forEach(it=> summary += `- ${it.name}${it.variant? ' ('+it.variant+')':''} x${it.qty} = Rs. ${(it.price*it.qty).toLocaleString()}\n`);
+  summary += `\nTotal: Rs. ${total.toLocaleString()}`;
+  // show success and summary on page
+  orderSuccess.classList.remove('hidden');
+  orderSummaryText.textContent = summary;
+  // clear cart
+  localStorage.removeItem(CART_KEY);
+  updateCartCount();
+  renderCart();
+  // optionally you can also open WhatsApp with message (commented)
+  // window.open(`https://wa.me/94764511276?text=${encodeURIComponent(summary)}`, '_blank');
+});
+
+/* ---------- Enquiry overlay ---------- */
+const enquiryOverlay = document.getElementById('enquiryOverlay');
+const closeEnquiry = document.getElementById('closeEnquiry');
+const enquiryForm = document.getElementById('enquiryForm');
+const cancelEnquiry = document.getElementById('cancelEnquiry');
+
+document.getElementById('openEnquiryFromModal')?.addEventListener('click', ()=>{
+  productModal.classList.add('hidden');
+  enquiryOverlay.classList.remove('hidden'); enquiryOverlay.classList.add('flex','items-center','justify-center');
+});
+closeEnquiry.addEventListener('click', ()=>{ enquiryOverlay.classList.add('hidden'); enquiryOverlay.classList.remove('flex','items-center','justify-center'); });
+cancelEnquiry.addEventListener('click', ()=>{ enquiryOverlay.classList.add('hidden'); enquiryOverlay.classList.remove('flex','items-center','justify-center'); });
+enquiryOverlay.addEventListener('click', e=>{ if(e.target === enquiryOverlay){ enquiryOverlay.classList.add('hidden'); enquiryOverlay.classList.remove('flex','items-center','justify-center'); } });
+
+enquiryForm.addEventListener('submit', e=>{
+  e.preventDefault();
+  const name = document.getElementById('enqName').value.trim();
+  const phone = document.getElementById('enqPhone').value.trim();
+  const prod = document.getElementById('enqProduct').value || 'N/A';
+  const msg = document.getElementById('enqMsg').value.trim();
+  const text = `Enquiry from ${name}%0APhone: ${phone}%0AProduct: ${prod}%0AMessage: ${msg}`;
+  window.open(`https://wa.me/94764511276?text=${encodeURIComponent(text)}`, '_blank');
+  enquiryForm.reset(); enquiryOverlay.classList.add('hidden'); enquiryOverlay.classList.remove('flex','items-center','justify-center');
+});
+
+/* Populate enquiry product select on load */
+document.addEventListener('DOMContentLoaded', ()=>{
+  const sel = document.getElementById('enqProduct');
+  const names = Array.from(document.querySelectorAll('.product-card')).map(c=>c.dataset.name);
+  names.forEach(n=>{ const o=document.createElement('option'); o.value=n; o.text=n; sel.appendChild(o); });
+});
+
+/* update cart count on load */
+updateCartCount();
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Dream Home Products</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#eaf5ea; margin:0; padding:20px; }
+    h1 { text-align:center; color:#2a7f2a; }
+    .product-container { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; }
+    .product-card { background:#fff; border-radius:12px; width:250px; padding:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; }
+    .product-card img { width:100%; height:180px; object-fit:cover; border-radius:8px; }
+    .product-card h3 { color:#2a7f2a; margin:10px 0 5px; }
+    .product-card p { margin:5px 0; font-weight:bold; }
+    .addToCartCard { background:#2a7f2a; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-size:16px; margin-top:8px; }
+    #cart { border:1px solid #ccc; padding:15px; border-radius:12px; background:#fff; margin-top:30px; width:320px; margin-left:auto; margin-right:auto; }
+    #cart ul { list-style:none; padding:0; margin:0; }
+    #cart li { margin-bottom:8px; }
+    .removeBtn { background:red; color:#fff; border:none; padding:2px 6px; border-radius:4px; cursor:pointer; margin-left:5px; }
+    footer { text-align:center; margin-top:40px; color:#555; }
+  </style>
+</head>
+<body>
+
+<h1>Smart Dream Home</h1>
+<p style="text-align:center; color:#555;">📞 0764511276 | No 80, Narampanawa, Digana, Kandy</p>
+
+
+
+<!-- Cart Section -->
+<div id="cart">
+  <h2>🛒 Your Cart</h2>
+  <ul id="cartItems"></ul>
+  <p id="cartTotal"><strong>Total: Rs. 0</strong></p>
+</div>
+
+<footer>
+  © 2025 Smart Dream Home | All rights reserved
+</footer>
+
+<script>
+// Cart Storage Functions
+function loadCart() {
+  return JSON.parse(localStorage.getItem('cart') || '[]');
+}
+function saveCart(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  renderCart();
+}
+
+// Render Cart
+function renderCart() {
+  const cart = loadCart();
+  const cartItems = document.getElementById('cartItems');
+  const cartTotal = document.getElementById('cartTotal');
+  cartItems.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    total += item.price * item.qty;
+    const li = document.createElement('li');
+    li.innerHTML = `${item.name} - Rs.${item.price} x ${item.qty} 
+      <button class="removeBtn" data-key="${item.key}">❌</button>`;
+    cartItems.appendChild(li);
+  });
+  cartTotal.innerHTML = `<strong>Total: Rs. ${total}</strong>`;
+
+  // Remove item
+  document.querySelectorAll('.removeBtn').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const key = e.currentTarget.dataset.key;
+      const cart = loadCart().filter(c=>c.key!==key);
+      saveCart(cart);
+    });
+  });
+}
+
+// Add to Cart from Product Card
+document.querySelectorAll('.addToCartCard').forEach(btn=>{
+  btn.addEventListener('click', e=>{
+    const card = e.currentTarget.closest('.product-card');
+    const id = card.dataset.id;
+    const name = card.dataset.name;
+    const price = Number(card.dataset.price);
+    const qty = 1;
+    const key = id;
+
+    const cart = loadCart();
+    const existing = cart.find(c=>c.key===key);
+    if(existing){ existing.qty += qty; }
+    else { cart.push({key, id, name, price, qty}); }
+
+   // saveCart(cart);
+    //alert(`${name} added to cart!`);
+  });
+});
+
+// Initialize cart on page load
+renderCart();
+</script>
+
+</body>
+</html>
+<section id="reviews" style="margin-top:50px; padding:30px; background:#f8fff8; border-radius:12px;">
+  <h2 style="text-align:center; color:#2a7f2a;">💬 Customer Reviews</h2>
+  <div id="reviewList" style="margin-top:20px;"></div>
+
+  <h3 style="margin-top:30px; color:#2a7f2a;">Write a Review</h3>
+  <form id="reviewForm">
+    <input type="text" id="reviewName" placeholder="Your Name" required 
+           style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;">
+
+    <select id="reviewRating" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;">
+      <option value="">⭐ Select Rating</option>
+      <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+      <option value="4">⭐⭐⭐⭐ Very Good</option>
+      <option value="3">⭐⭐⭐ Good</option>
+      <option value="2">⭐⭐ Fair</option>
+      <option value="1">⭐ Poor</option>
+    </select>
+
+    <textarea id="reviewMessage" placeholder="Write your review..." required 
+              style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;"></textarea>
+
+    <button type="submit" 
+            style="background:#2a7f2a; color:#fff; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">
+      Submit Review
+    </button>
+  </form>
+</section>
+
+<script>
+// Load reviews from backend
+function loadReviews(){
+  fetch("get_reviews.php")
+    .then(res => res.json())
+    .then(data=>{
+      const reviewList = document.getElementById('reviewList');
+      reviewList.innerHTML = '';
+      if(data.length === 0){
+        reviewList.innerHTML = '<p style="color:#666;">No reviews yet. Be the first to review!</p>';
+      } else {
+        data.forEach(r=>{
+          const div = document.createElement('div');
+          div.style = "background:#fff; padding:15px; margin-bottom:10px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1)";
+          div.innerHTML = `<strong>${r.name}</strong> - ${"⭐".repeat(r.rating)}<br>
+                           <span style="color:#333;">${r.message}</span>`;
+          reviewList.appendChild(div);
+        });
+      }
+    });
+}
+
+// Submit review to backend
+document.getElementById('reviewForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const formData = new FormData();
+  formData.append("name", document.getElementById('reviewName').value);
+  formData.append("rating", document.getElementById('reviewRating').value);
+  formData.append("message", document.getElementById('reviewMessage').value);
+
+  fetch("add_review.php", {
+    method: "POST",
+    body: formData
+  })
+  .then(res=>res.text())
+  .then(res=>{
+    if(res==="success"){
+      alert("✅ Review submitted!");
+      e.target.reset();
+      loadReviews();
+    } else {
+      alert("❌ Error submitting review.");
+    }
+  });
+});
+
+// Initial load
+loadReviews();
+</script>
+
