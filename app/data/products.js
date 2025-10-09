@@ -53,15 +53,48 @@ export const PRODUCTS = [
 		id: 'p2',
 		name: 'Smart Push Button Switch',
 		desc: 'Push-button smart switch with relay, WiFi control and LED indicator. 12 months warranty.',
-		images: ['/images/smart-push-buttons/image1.jpg'],
-		variants: [{label: '1 Gang', price: 3700}, {label: '2 Gang', price: 3900}, {label: '3 Gang', price: 4300}]
+		images: [
+			'/images/smart-push-buttons/image1.jpg',
+			'/images/smart-push-buttons/image2.jpeg',
+			'/images/smart-push-buttons/image3.jpeg',
+			'/images/smart-push-buttons/image4.jpeg'
+		],
+		variants: [{label: '1 Gang', price: 3700}, {label: '2 Gang', price: 3900}, {label: '3 Gang', price: 4300}],
+		description_en: `WiFi Smart Connectivity :The Chevolink WiFi smart light switch ensures seamless connectivity with your smart life/Tuya app and Alexa Google Home for a hassle-free home automation experience.
+
+* APP Control Functionality :This smart switch allows for APP control, providing you with the convenience of managing your lighting from anywhere in the world.
+
+* ROHS Certified :Being ROHS certified, this product adheres to strict safety standards, ensuring it is safe for use in your home.
+
+* Durable Plastic Material :Constructed from durable plastic, this light switch is designed to withstand regular use and last for years, offering excellent value for money.
+
+* Versatile Switch Type :With its versatile switch type, this product can be used in 1/2/3 gang settings, making it a flexible addition to any home.
+
+* Neutral Installation :This smart light switch requires a neutral installation, making it suitable for both single and double switch sockets.
+
+
+
+Main Features:
+
+1.Hands-Free Voice Control:Compatible with Amazon Alexa and Google Home for easy voice control.
+
+2.Wi-Fi/4G Remote Control:Take Command of Your Lights Using The "Smart Life or Tuya" App (iOS Or Android) Anytime or Anywhere.The App Can Be Easily Shared with Multiple Family Members.
+
+3.Schedules/Countdown:Use Schedules to Set Your Switch to Automatically Turn On And Off While You're Home Or Away. You Can Even Use the Smart Setting Feature to Sync Lights to Adjust with The Sunset and Sunrise / Weather / Temperature and Even Air Quality.Auto on/off Features Provides Your Choice of 1min/5min/30min/1hour etc. Countdown Options.
+
+4.Designed,Engineered and Manufactured at MoesOwn In-House Facility,Full2Year Warranty,Your Complete Satisfaction Is Moes Goal for All Its Customers.
+
+5.Note: Smart Switch Requires the Connection to a Neutral White Wire for Proper Operation /Single-Pole Only(Not 3-Way)/Not Dimmer Switch2.4G Wi-Fi Only`,
+		description_si: ''
 	},
 	{
 		id: 'p3',
 		name: 'Smart MCB',
 		desc: 'Smart MCB with remote trip alerts, current monitoring and overload protection. 18 months warranty.',
 		images: ['/images/smart-mcb/image1.jpg'],
-		price: 6000
+		price: 6000,
+		description_en: ``,
+		description_si: ``
 	},
 	{
 		id: 'p4',
@@ -137,21 +170,213 @@ export const PRODUCTS = [
 		id: 'p14',
 		name: 'Intelligent Light Control System',
 		desc: 'Full intelligent lighting control with scenes, dimming, presence detection and remote management.',
-		images: ['/images/smart-light-controller/image1.jpg'],
+		images: [
+			'/images/smart-light-controller/image1.jpg',
+			'/images/smart-light-controller/image2.jpeg',
+			'/images/smart-light-controller/image3.jpeg',
+			'/images/smart-light-controller/image4.jpeg',
+			'/images/smart-light-controller/image5.jpeg',
+			'/images/smart-light-controller/image6.jpeg',
+			'/images/smart-light-controller/image7.jpeg',
+			'/images/smart-light-controller/image8.jpeg'
+		],
+		description_en: `Special precautions for products:
+
+This product is low voltage DC12V-24V. It is necessary to connect the switching power supply. Do not connect the wrong voltage to avoid burning the controller.
+
+The input port is divided into positive and negative poles. Do not connect them reversely. Do Switch off the power before you operate the light connection. After the operation is completed, check the installation line and the lamp connection before powering on. If the wire and the lamp are not installed according to the requirements, there may be a short circuit, resulting in abnormal control.
+
+This product is not waterproof fireproof fire. Do not immerse in water or use near the fire source.
+
+Operating instructions:
+
+Long press the key [1] for 4 seconds to enter the setting of step number for the step light. Then, short press the key [1] to turn on the "1-32"channel number light. Select the number of step light channels according to the
+
+channel light indication, and then long press the 1.key [1] or wait for 5 seconds Save settings;
+
+Short press the key [1] to select 5 modes, and select the desired mode based on the display indicator light;
+
+Function display area: The second indicator light on the left is"step", the first indicator light on the left is "every other step", the third indicator light on the left is "all on", the fourth indicator light on the left is "follow, and the fifth indicator light on the left is"automatic"(there is a pattern when there is no one present, Step when there are people).
+
+Short press the key [2] to select the duration of the constant light "10s-20s-40s-80s-100s"
+
+Function display area: One indicator light is on as "10S", two indicator lights are on as "20S", three indicator lights are on as "40S", four indicator lights are on as "80S", and five indicator lights are on as "100S".
+
+Long press the key [2] for 4 seconds to select the brightness of the staircase light, then short press the key [2] to select "10%-20%-40%-60%-100%", and then long press the key [2] or wait for 5 seconds to save the settings;
+
+Function display area: One indicator light is on at "10%", two indicator lights are on at "20%", three indicator lights are on at "40%", four indicator lights are on at "60%", and five indicator lights are on at "100%".
+
+Short press the key [ 3 ] to set the water flow speed of the staircase ight, with a time of "0.3s 0.5s 0.8s 1.0s 1.2s";
+Function display area: One indicator light is on as "0.3S, two indicator lights are on as "0.5S", three indicator lights are on as "0.8S", four indicator lights are on as "1.0S", and five indicator lights are on as "1.2S".
+Long press and hold the key [3] to turn off or tur on the 1% brightness background light function (all channels have 1% brightness when there are no people, and step when there are people);
+
+After 5 seconds of no operation on any buttons, all lights flash once to automatically save all set parameters.
+
+Operation supplement:
+
+If AB induction is triggered simultaneously within 6 seconds, up and down at the same time. If AB induction is 6 seconds later. AB induction direction only goes from one end to the other.
+
+Set the chase time.
+
+Step every other step, all on, follow, automatic.
+
+If the induction continues at the delay time, keep it on = total time from A to B + delay time.
+
+Short-circuit protection device, short circuit status, five status indicators strobe.
+
+Specifications:
+
+Product name: LED upgraded staircase sensing control device
+
+Product type: LED2052-V2
+
+Input voltage: DC12V/24V
+
+Port: 2
+
+Sensor head: 2 (AB)
+
+Product size: About 180*63*19mm
+
+Channel: 32 (set to 1-32 step)
+
+Package Included:
+
+1 x LED Controller
+2 x Sensors
+2 x Output Cables`,
+		description_si: ``,
 		price: 14500
 	},
 	{
 		id: 'p15',
 		name: 'Smart Door Lock + Face Unlocking',
 		desc: 'Advanced smart door locking system with keyless entry, remote access, real-time monitoring, and enhanced security management.',
-		images: ['/images/smart-door-lock/image1.jpeg'],
+		images: [
+			'/images/smart-door-lock/image1.jpeg',
+			'/images/smart-door-lock/image2.jpeg',
+			'/images/smart-door-lock/image3.jpeg',
+			'/images/smart-door-lock/image4.jpeg',
+			'/images/smart-door-lock/image5.jpeg',
+			'/images/smart-door-lock/image6.jpeg',
+			'/images/smart-door-lock/image7.jpeg',
+			'/images/smart-door-lock/image8.jpeg',
+			'/images/smart-door-lock/image9.jpeg',
+			'/images/smart-door-lock/image10.jpeg',
+			'/images/smart-door-lock/image11.jpeg',
+			'/images/smart-door-lock/image12.jpeg',
+			'/images/smart-door-lock/image13.jpeg',
+			'/images/smart-door-lock/image14.jpeg',
+			'/images/smart-door-lock/image15.jpeg'
+		],
+		description_si: ``,
+		description_en: `1. 6 ways to unlock: 3D Face, Tuya APP锛� Palm unlock, Fingerprint Unlock, Pass Code, Card, Mechanical Key Unlock;
+
+2. Visual real time intercom: you can see who is in front of your door remotely by phone or at home by screen on lock. And it also support video surveillance function.
+
+3. No worry when no power or re can not unlock the door inside, indoor has one mechanical handle to unlock door directly.
+
+4. Convenient APP management system, you can manage your smart lock anytime and anywhere; You can manage a large number of locks with just one phone;
+
+5. Multi-level administrator settings to help you better manage your smart buildings;
+
+6. Query unlock records anytime and anywhere, the rest time to know your home security;
+
+7. The compact size ts all wooden doors and metal doors;
+
+8. Fingerprint reader gives you the best security experience ;
+
+9. We can customize production according to your requirements,OEM/ODM;
+
+10. Support : English ,Vietnamese, Portuguese, Arabic,Russian,Thai, Spanish ,Indonesian,French, Chinese`,
 		price: 54000
 	},
 	{
 		id: 'p16',
 		name: 'Smart Door Bell',
 		desc: 'Smart doorbell with HD video, two-way communication, motion detection and mobile notifications for enhanced home security.',
-		images: ['/images/smart-door-bell/image1.jpeg'],
+		images: [
+			'/images/smart-door-bell/image1.jpeg',
+			'/images/smart-door-bell/image3.jpeg',
+			'/images/smart-door-bell/image4.jpeg',
+			'/images/smart-door-bell/image5.jpeg',
+			'/images/smart-door-bell/image6.jpeg',
+			'/images/smart-door-bell/image7.jpeg',
+			'/images/smart-door-bell/image8.jpeg',
+			'/images/smart-door-bell/image9.jpeg',
+			'/images/smart-door-bell/image10.jpeg',
+			'/images/smart-door-bell/image11.jpeg',
+			'/images/smart-door-bell/image12.jpeg',
+			'/images/smart-door-bell/image13.jpeg',
+			'/images/smart-door-bell/image14.jpeg',
+			'/images/smart-door-bell/image15.jpeg'
+		],
+		description_en: `Features:
+
+Long Standby: No disassembly cycle charging. Built-in lithium-ion high-capacity battery, long standby. The doorbell is powered by built-in large battery, no need to charge frequently; and the chime is of USB power supply, easy and convenient for use.
+
+Video Call: Easy to deal with visiting guests, when someone presses the doorbell, the doorbell will push notification to the phone, and the owner can enter the phone video conversation interface.
+
+Portable Installation: Can be pasted and perforated. Support adhesive backing, no need to punch holes, while supporting hole punch installation. No plugging, convenient and hassle-free.
+
+Capture Screen: Storage to the cloud, security protection drip. When a visitor presses the doorbell, it can capture the visitor's picture and save the record to the cloud, so that the cell phone APP can view the past pictures at any time, which is safer and more secure.
+
+
+
+Wireless Video Doorbell Camera: Support 2.4G WiFi and APP connection, 480P high resolution, presenting you clearer pictures & videos and more details. 2-Way Audio: With built-in mic, you can see and talk to your visitors at anytime and anywhere.
+
+
+
+Night Vision: Built-in high-quality IR LED lamp beads and light sensor, the picture is clear at night; also can automatically switch to night mode from day mode after the ambient light drops down to 2 Lux. Strong and stable signal, easy to pair up, transmission range up to 50 meters, ring tones and volume can be adjusted according your preference.
+
+
+
+Specification:
+
+Name: Smart Doorbell
+
+Material: ABS Plastic Electronic Components
+
+Color: White
+
+Max. Resolution: VGA, 640*480
+
+Video Coding Standard: MJEPG
+
+Audio Coding Standard: G711.A
+
+Video Frame Rate: VGA@20fps
+
+Day/ Night Mode Switch: Automatic
+
+Video Transmission Encryption: AES
+
+Radio Frequency Coding: EV1527
+
+Infrared Lamp Control: Automatic, Adjustable Sensitivity
+
+Infrared Lamp Wave Length: 850nm
+
+Motion Detection: Automatic, Adjustable Sensitivity
+
+Connection Mode: 2.4G WiFi
+
+
+
+Working Temperature: -10~45℃
+
+Working Humidity: ≤95%
+
+Doorbell Battery Capacity: 800mAh
+
+
+
+Package list:
+1*Smart Doorbell (Include Lithium battery inside)
+1*Usb Cable
+1*User Manual
+1*Some Screws`,
+		description_si: ``,
 		price: 5000
 	}
 ];
