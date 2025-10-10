@@ -91,51 +91,386 @@ Main Features:
 		id: 'p3',
 		name: 'Smart MCB',
 		desc: 'Smart MCB with remote trip alerts, current monitoring and overload protection. 18 months warranty.',
-		images: ['/images/smart-mcb/image1.jpg'],
+		images: [
+			'/images/smart-mcb/image1.jpg',
+			'/images/smart-mcb/image3.jpeg',
+			'/images/smart-mcb/image4.jpeg',
+			'/images/smart-mcb/image5.jpeg',
+			'/images/smart-mcb/image6.jpeg',
+			'/images/smart-mcb/image7.jpeg',
+			'/images/smart-mcb/image8.jpeg',
+			'/images/smart-mcb/image9.jpeg',
+			'/images/smart-mcb/image10.jpeg',
+			'/images/smart-mcb/image11.jpeg',
+			'/images/smart-mcb/image12.jpeg',
+			'/images/smart-mcb/image13.jpeg',
+			'/images/smart-mcb/image14.jpeg',
+		],
 		price: 6000,
-		description_en: ``,
+		description_en: `
+Features
+
+1.Remote control at anytime from anywhere
+
+2.Prepaid function
+
+3. voltage, current, kwh dispaly
+
+4.Over and under voltage protection
+
+5.Over current protection
+
+6.Leakage protection
+
+7.Schedule/Timer/loop timer
+
+8.Energy monitoring
+
+9. Working Voltage:AC 90-300V 50/60Hz
+
+10.Mechanical Life: Over 100000 Times
+
+11.Working Temperature: -25℃-70℃
+
+Note:This meter Only supports 2.4G Wireless Network,  NOT for 5G
+
+This device is not compatible with Home Assistant, please use the device in SMART LIFE APP/ TUYA APP.
+
+Wiring: Power must enter from the top and must be Live line + Neutral Line (L+N). Live line + Live line (L+L) cannot be used.
+`,
 		description_si: ``
 	},
 	{
 		id: 'p4',
 		name: 'Smart Energy meter(RCCB)',
 		desc: 'Earth leakage (RCCB) with smart notifications and test. 18 months warranty.',
-		images: ['/images/smart-rccb/image1.webp'],
+		images: [
+			'/images/smart-rccb/image1.webp',
+			'/images/smart-rccb/image2.jpeg',
+			'/images/smart-rccb/image3.jpeg',
+			'/images/smart-rccb/image4.jpeg',
+			'/images/smart-rccb/image5.jpeg',
+			'/images/smart-rccb/image6.jpeg',
+			'/images/smart-rccb/image7.jpeg',
+			'/images/smart-rccb/image8.jpeg',
+			'/images/smart-rccb/image9.jpeg',
+			'/images/smart-rccb/image10.jpeg',
+			'/images/smart-rccb/image11.jpeg',
+			'/images/smart-rccb/image12.jpeg',
+			'/images/smart-rccb/image13.jpeg',
+			'/images/smart-rccb/image14.jpeg',
+			'/images/smart-rccb/image15.jpeg'
+		],
+		description_en: `
+Feature
+
+TOVA-63T can only cut off L White Screen
+
+Rated voltage: 80-300V; Frequency: 50/60Hz
+
+This product can work with L N 110V/220V AC.
+
+1.Remote control ON/OFF at anytime from anywhere by phone.
+
+2.Review current/voltage/leakage current/total kWh/Power factor/Frequency on phone
+
+3.Timer function in smartlife TUYA app
+
+4.Relay Status: OFF, ON, Memory
+
+5.Password protection
+
+6.Can set overload/over voltage/under voltage/over current /leakage current/High temperature in app
+
+7.Overload protection 1-17kW (adjustable) (default: 13kW)
+
+Overload protection delay 1-500s  (default: 1s)
+
+8.Under voltage protection 80V-210V (adjustable) (default: OFF)
+
+Undervoltage protection delay 1-500s(default: 1s)
+
+9.Over voltage proteciton 120V-300V (adjustable) (default: 270V)
+
+Overvoltage protection delay 1-500s  (default: 1s)
+
+10.Over current protection 1A-63A (adjustable) (default: 63A)
+
+Overcurrent protection delay 1-500s  (default: 1s)
+
+11.High temperature protection 1-200℃ (adjustable) (default: 80A)
+
+Temperature protection delay 1-500s  (default: 1s)
+
+12.Leakage protection 0mA-99mA (adjustable) (default:0mA)
+
+Leakage protection delay 0.1-10S (default: 0.1s)
+
+13.Reconnect time (delay on time): 0s-500s (default: 10s)
+
+Reclosure Times Limit 1-30times(default: 5times)
+
+14.Voltage/current/kW calibration: -9.9%-9.9%
+
+15.Action time: 1-30s (detault 0.5s)
+
+16.Restore factory settings
+
+17.Countdown function
+
+18.Schedule function
+
+19.Time period rate limiting function
+
+20.Circulate function
+
+21.Inching function
+
+22.power consumption less than 2W
+
+Note:This meter Only supports 2.4G Wireless Network,  NOT for 5G.`,
+		description_si: ``,
 		price: 8500
 	},
 	{
 		id: 'p5',
 		name: 'Moes Smart Door Lock',
 		desc: 'Moes smart door lock: fingerprint, PIN, card, app access, logs, backup keys. 24 months warranty.',
-		images: ['/images/smart-mose-doorlock/image1.png'],
+		images: [
+			'/images/smart-mose-doorlock/image1.png',
+			'/images/smart-mose-doorlock/image2.jpeg',
+			'/images/smart-mose-doorlock/image3.jpeg',
+			'/images/smart-mose-doorlock/image4.jpeg',
+			'/images/smart-mose-doorlock/image5.jpeg',
+			'/images/smart-mose-doorlock/image6.jpeg',
+			'/images/smart-mose-doorlock/image7.jpeg',
+			'/images/smart-mose-doorlock/image8.jpeg',
+			'/images/smart-mose-doorlock/image9.jpeg',
+			'/images/smart-mose-doorlock/image10.jpeg',
+			'/images/smart-mose-doorlock/image11.jpeg',
+			'/images/smart-mose-doorlock/image12.jpeg',
+			'/images/smart-mose-doorlock/image13.jpeg',
+			'/images/smart-mose-doorlock/image14.jpeg',
+			'/images/smart-mose-doorlock/image15.jpeg',
+			'/images/smart-mose-doorlock/image16.jpeg'
+		],
+		description_en: `Technical Specifications:
+Material: Aluminum alloy, ABS, acrylic
+Color: Black
+Door thickness: 35-60mm
+Correspondence: WIFI
+Support system: iOS 7.0 or above, Android 4.4 or above
+Battery life: (10-12 months) Press 10 times/day to unlock normally
+Power support: DC6V: 4 AA alkaline batteries
+Static current: ≦50 uA
+Dynamic current: <200mA
+Unlocking mode: Fingerprint, lC card, password, APP, mechanical key
+Unlocking time: 1~1.5 S
+Working temperature: -20~50°C
+Working humidity: 10%~95%
+Factory default password: 123456. This password is invalid after you reset the administrator.
+Lock type: Support single bolt,5072/4585/6085/050/5572/KS insert tenon
+Virtual password: Available
+Number of users: lC card + password + fingerprint: 250 groups, 9 groups of administrators
+
+Packing List:
+Smart door lock *1
+Mechanical keys *2
+IC cards *2
+Screws *4
+Sleeve screw *4
+Square copper *2`,
+		description_si: ``,
 		price: 42000
 	},
 	{
 		id: 'p6',
 		name: 'Smart IR Control',
 		desc: 'Universal IR controller for AC/TV/set-top boxes — add IR devices to your smart home.',
-		images: ['/images/smart-ir/image1.jpg'],
+		images: [
+			'/images/smart-ir/image1.jpg',
+			'/images/smart-ir/image2.jpeg',
+			'/images/smart-ir/image3.jpeg',
+			'/images/smart-ir/image4.jpeg',
+			'/images/smart-ir/image5.jpeg',
+			'/images/smart-ir/image6.jpeg',
+		],
+		description_en: `It supports 50,000+ IR (only 38KHz IR, no RF) control devices, including air conditioners, TVs, TV boxes, DVDs, audio, personal video recorders, and receivers.
+
+
+* Universal Compatibility: Control all your home appliances with one remote. This smart WiFi IR universal remote controller is compatible with Alexa, Google Home, and Tuya Smart Life app.
+
+* Infrared Remote Control: Control your home appliances from a distance. This remote controller uses infrared technology to control your home appliances, even when you're not in the same room.
+
+* Wi-Fi Connectivity: Connect to your home Wi-Fi network for easy control. This remote controller connects to your home Wi-Fi network, allowing you to control your home appliances from anywhere using your smartphone.
+
+* DIY function: Customizing buttons in the Tuya Smart App if your home appliances brand is not in the list or not supported.
+
+* Timing/schedule: According to your living habits, set time switches for your home appliances, such as turning on/off the air conditioner at regular intervals.
+
+
+Type-C Power Connector
+
+Power input DC 5V 1A`,
+		description_si: ``,
 		price: 2500
 	},
 	{
 		id: 'p7',
 		name: 'Smart Socket',
 		desc: 'Smart socket with power monitoring and remote on/off control.',
-		images: ['/images/smart-socket/image1.jpg'],
+		images: [
+			'/images/smart-socket/image1.jpg',
+			'/images/smart-socket/image2.jpeg',
+			'/images/smart-socket/image3.jpeg',
+			'/images/smart-socket/image4.jpeg',
+			'/images/smart-socket/image5.jpeg',
+			'/images/smart-socket/image6.jpeg',
+			'/images/smart-socket/image7.jpeg',
+			'/images/smart-socket/image8.jpeg'
+		],
+		description_en: `
+1.WiFi and Bluetooth with Power Monitor.
+ 2.WiFi without Power Monitor ，need to manually click on the socket (WiFi) to manually distribute the network.
+Product Features
+
+Smart Life Control
+
+Easily manage your electrical appliances with Smart Life Control, offering convenience and efficiency.
+
+WiFi & BT Socket
+
+Equipped with WiFi and BT sockets, ensuring reliable connectivity and smooth operation.
+
+UK 20A Rating
+
+With a UK 20A rating, this smart plug is designed to handle high power appliances with ease.
+
+Power Monitor Feature
+
+Stay informed about your energy usage with the Power Monitor feature, helping you save on electricity costs.
+
+Voice Control Compatibility
+
+Seamlessly integrates with Alexa and Google Home, allowing you to control your devices with simple voice commands.
+
+child lock
+
+With a child lock, so that children do not play, for the safety of children to do securit
+
+For Smart Home Automation
+- This WiFi smart power socket is rated at 3000W total power, please ensure that you do not use more than one powerful device at the same time (total power does not exceed 3000W).
+
+- Works with Google Home for Google Assistant voice control
+
+-Just one tap on your smartphone makes your life so much easier!
+
+-Forget to switch off your appliances when you're out and about, or don't want to turn off the lights when you're in your room getting ready for a break.
+
+Now you don't have to, even if the wall outlet is out of your reach.
+
+UK Smart Plug Specifications
+- Product Name: British Standard WiFi&Bluetooth Smart Plug
+
+- Maximum Power: 3000W (Resistive Load)
+
+- Operating Voltage: AC100-240V(50/60Hz)
+
+- Wireless Type: WiFi2.4G&Bluetooth
+
+- Material ABS Flame Retardant Polymer
+
+- Power Consumption: <0.3W - Operating Current: Maximum 20A
+
+- Cord Length: Wall Mounted - APP Support: Android 4.1 / IOS 8.0 or above
+
+- APP Support: ‘TUYA’ or ‘Smart Life’ - Support: Compatible with Alexa and Google Assistant`,
+		description_si: ``,
 		price: 2800
 	},
 	{
 		id: 'p8',
 		name: 'Smart Socket Base',
 		desc: 'Smart socket base that supports different plugs, scheduling & remote control.',
-		images: ['/images/smart-socket-base/image1.webp'],
+		images: [
+			'/images/smart-socket-base/image1.webp',
+			'/images/smart-socket-base/image2.jpeg',
+			'/images/smart-socket-base/image3.jpeg',
+			'/images/smart-socket-base/image4.jpeg',
+			'/images/smart-socket-base/image5.jpeg',
+			'/images/smart-socket-base/image6.jpeg',
+			'/images/smart-socket-base/image7.jpeg',
+			'/images/smart-socket-base/image8.jpeg',
+			'/images/smart-socket-base/image9.jpeg',
+		],
+		description_en: `💡 Smart Dream Home – 16A Smart Socket Base 🔌
+
+Upgrade your home with the Smart Dream Home 16A Smart Socket Base, designed for high-power appliances and full smart control.
+Easily manage your devices from anywhere using your mobile app, or enjoy hands-free operation with Alexa or Google Assistant voice control.
+
+✅ Key Features:
+
+🔌 16A High Power Output – Ideal for heavy-duty appliances like water heaters, irons, kettles, and fans
+
+📱 App Control – Works with Tuya or Smart Life apps
+
+🗣 Voice Control – Compatible with Alexa & Google Assistant
+
+⏰ Timer & Scheduling – Set automatic on/off times to save energy
+
+⚙️ Real-time Energy Monitoring
+
+🔒 Overload Protection & Safety Shutter Design
+
+🌐 Wi-Fi Connection – No hub required
+
+
+💚 Warranty: 6 Months`,
+		description_si: ``,
 		price: 4800
 	},
 	{
 		id: 'p9',
 		name: 'Moes Smart Fan Controller',
 		desc: 'Moes fan controller with speed presets, remote and app control.',
-		images: ['/images/mose-fan-controller/image1.jpg'],
+		images: [
+			'/images/mose-fan-controller/image1.jpg',
+			'/images/mose-fan-controller/image2.jpeg',
+			'/images/mose-fan-controller/image3.jpeg',
+			'/images/mose-fan-controller/image4.jpeg',
+			'/images/mose-fan-controller/image5.jpeg',
+			'/images/mose-fan-controller/image6.jpeg',
+			'/images/mose-fan-controller/image7.jpeg',
+			'/images/mose-fan-controller/image8.jpeg',
+			'/images/mose-fan-controller/image9.jpeg',
+			'/images/mose-fan-controller/image10.jpeg',
+			'/images/mose-fan-controller/image11.jpeg',
+			'/images/mose-fan-controller/image12.jpeg',
+			'/images/mose-fan-controller/image13.jpeg',
+			'/images/mose-fan-controller/image14.jpeg',
+			'/images/mose-fan-controller/image15.jpeg'
+		],
+		description_en: `WiFi RF433 Smart Ceiling Fan Switch Smart Life/Tuya App Relay Status and Backlight Switch OFF Wireless  Remote Control Works with Amazon Alexa Echo and Google Assistant for Voice Control No Hub Required
+By Moes
+
+2020 New Arrival Upgraded with More Personalized Points:
+
+·Update1:New pairing mode with WiFi+Bluetooth
+
+·Update2:Backlight ON/OFF optional
+
+·Update3:Relay status adjustable when power off
+
+  Update4:RF frequency built-in for RF remote control
+
+Main Features:
+
+1.anti-scratch tempered glass panel suits any home decor and allows for effortless touch control; you can multi-control associate this switch to multiple different switches in Smart Life App.
+2.Non-interference control mode; allows the switch to be controlled via Smart Life, touch control, voice, and remote with RF433 frequency and 1527 encoding remote switch(not included); each control method works independently; achieve multi-control by associating to other smart switches
+3.Compatible with Alexa and Google Home for hands-free voice control; can also be controlled via Smart Life/Tuya app anytime, anywhere; setting relay status and remembers last relay status optional when powered off , backlight switch On/Off.
+4.Take full control of connected appliances with timers, schedules and countdown (1/5/30 mins, 1 hour, etc.) with the app; share control with family and friends for added convenience
+5.Neutral wire is required in your switch boxes to operate correctly; only supports 2.4 GHz network; offers easier pairing via WiFi and Bluetooth connectivity`,
+		description_si: ``,
 		price: 5500
 	},
 	{
