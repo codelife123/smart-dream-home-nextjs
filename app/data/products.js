@@ -142,28 +142,300 @@ Main Features:
 		id: 'p10',
 		name: 'Smart Soil Tester Sensor',
 		desc: 'Soil moisture & nutrient sensor with app alerts — ideal for smart gardening.',
-		images: ['/images/smart-soil-tester-sensor/image1.png'],
+		images: [
+			'/images/smart-soil-tester-sensor/image1.png',
+			'/images/smart-soil-tester-sensor/image2.jpeg',
+			'/images/smart-soil-tester-sensor/image3.jpeg',
+			'/images/smart-soil-tester-sensor/image4.jpeg',
+			'/images/smart-soil-tester-sensor/image5.jpeg',
+			'/images/smart-soil-tester-sensor/image6.jpeg',
+			'/images/smart-soil-tester-sensor/image7.jpeg',
+		],
+		description_en: `Attention please：
+
+
+
+*This product is WiFi option!
+
+
+
+*Please note that if you want to switch the temperature unit ℉ to ℃, just click or double-click the button on the product.
+
+
+
+Ideal for gardeners, smart home enthusiasts, and eco-conscious plant lovers!
+
+
+
+The Tuya Soil Tester Sensor is a powerful, accurate andreliable soil environment monitoring device designed tomeet the needs of soil data monitoring in home gardening,small farms,scientific research and teaching scenarios.Through advanced sensing technology, it can quickly andaccurately measure a number of key soil parameters,providing powerful data support for scientific planting,rational fertilization and soil environment research.
+
+
+
+Why Buy?
+
+🌱 Prevent over/under-watering with precise soil data.
+
+🏡 Smart home integration for automated plant care.
+
+📱 Remote monitoring from anywhere via app.
+
+
+
+Q＆A:
+
+1.How to switch temperature units?
+
+-Just click or double-click the button on the product to switch units.
+
+2.What kind of battery should be used?
+
+-AAA*2,1.5v battery (non-rechargeable battery)
+
+3.How to measure more accurately?
+
+-Because this is a WiFi version of the product, please keep the network constantly connected(Don't stray too far from the web source), so as to ensure the accuracy of the measurement.
+
+
+
+Specifications:
+
+
+
+Product name: Soil Tester sensor
+
+
+
+Battery type: AAA*2(Not Included)
+
+
+
+Temperature detection range:‒10℃ ~ +60°C
+
+
+
+Humidity detection range: 0%~100%
+
+Temperature detection accuracy:±1℃
+
+Humidity detection accuracy: ±10%
+
+Wireless protocol: WiFi
+
+Product size: 181*35*24mm
+
+Package List:
+
+Sensor*1
+
+User manual*1`,
+		description_si: ``,
 		price: 4800
 	},
 	{
 		id: 'p11',
 		name: 'Smart Valve',
 		desc: 'Motorized smart valve for irrigation — schedule and control remotely.',
-		images: ['/images/smart-valve/image1.jpg'],
+		images: [
+			'/images/smart-valve/image1.jpg',
+			'/images/smart-valve/image2.jpeg',
+			'/images/smart-valve/image3.jpeg',
+			'/images/smart-valve/image4.jpeg',
+			'/images/smart-valve/image5.jpeg',
+			'/images/smart-valve/image6.jpeg',
+			'/images/smart-valve/image7.jpeg',
+			'/images/smart-valve/image8.jpeg',
+			'/images/smart-valve/image9.jpeg',
+			'/images/smart-valve/image10.jpeg',
+			'/images/smart-valve/image11.jpeg',
+			'/images/smart-valve/image12.jpeg',
+			'/images/smart-valve/image13.jpeg',
+			'/images/smart-valve/image14.jpeg',
+			'/images/smart-valve/image15.jpeg'
+		],
+		
+		description_en: `
+WIFI CAN WORK STANALONE;
+Below Video product is WIFI Tuya Smart Valve.
+WiFi&ZigBee Alexa, Google voice Command is the same operation
+
+Specifications:
+
+Power adapter input: 100V-240V
+Power adapter output: DC12V 1A
+WiFi: 2.4GHz only
+Radio Range: 30 meters
+Valve pressure: 1.6 meters
+Valve pressure: 1.6MPA
+Time off valve auto: 5-10 seconds
+Time off valve electric: 5-10 seconds
+Torque: 30-60kgf.cm
+Power cord: 2.3 meters (0.9 meter from power adapter, 1.4 meter from the body)
+Power cord extendable with 5.5x2.1mm size DC male-famale cord.
+
+A Smart Add-on for your Existing Water or Gas Ball Valve
+
+Simply add this smart valve controller to your water valve or gas shutoff valve, you can simple control the water supply or turn off gas valve from anywhere at any time with your smartphone, using free Smart Life app.
+
+Works with Amazon Alexa and Google Home
+
+When paired with the Amazon Alexa or Google Assistant, the smart shut off valve gives you hands - free voice control over your home.
+
+Voice Command:
+
+"Hey, Google, Turn ON/OFF DEVICE NAME"
+
+"Alexa, Turn ON/OFF DEVICE NAME"`,
+		description_si: ``,
 		price: 7800
 	},
 	{
 		id: 'p12',
 		name: 'Smart Mini Switch',
 		desc: 'Mini smart switch 16A — WiFi + Tuya support, voice control, energy monitoring.',
-		images: ['/images/smart-mini-switch/image1.jpg'],
+		images: [
+			'/images/smart-mini-switch/image1.jpg',
+			'/images/smart-mini-switch/image2.jpeg',
+			'/images/smart-mini-switch/image3.jpeg',
+			'/images/smart-mini-switch/image4.jpeg',
+			'/images/smart-mini-switch/image5.jpeg',
+			'/images/smart-mini-switch/image6.jpeg',
+			'/images/smart-mini-switch/image7.jpeg',
+			'/images/smart-mini-switch/image8.jpeg',
+			'/images/smart-mini-switch/image9.jpeg',
+		],
+		description_en: `
+* 2 Way Control :Control your home appliances from anywhere with the Tuya mini 16A WiFi switch. This smart home automation module allows you to control your appliances with ease.
+
+
+
+* Voice Control :Use Alexa or Google Home to control your home appliances with voice commands. No need to search for the switch or appliance, simply use your voice.
+
+
+
+* Smart Home Platform :The Tuya smart home platform allows you to easily connect and control your home appliances. With the Tuya app, you can easily manage your home automation system.
+
+
+
+* CE Certification :The Tuya mini 16A WiFi switch is certified by CE, ensuring that it meets high safety and quality standards.
+
+
+
+Note:
+
+It's suitable for changing mechanical switches into smart switches. Connected by 2.4G Wifi. The app is Tuya or Smart Life. Please match the device in Alexa or Google or Alice with Tuya app.
+
+Any problem with the product please contact us, we will always try our best to help you to solve the problem.
+
+
+Product Information
+
+Features:
+
+1. Mini Body: Designed 40*40*21mm mini body, which is working with most of amounting boxes, switches and wall sockets.
+
+It is not only small, but also powerful. Maximum power reaches 1800-3450W, it can be used for most of home appliances and lighting.
+
+
+2. Support Two-way Control: This smart DIY switch could be used for your old 2 way control switch. Especially, you still available to control the old switch manually after isntalled it.
+
+
+3. App Remote Control: Remote control lighting or appliances of your house via Smart Life app from anywhere at anytime. No hub required.
+
+
+4. Voice Control: The wifi DIY switch works with Alexa and Google Home Assistant to conveniently control the appliances with simple voice command when you are on go.
+
+
+5. Timing Function: Create schedules to automatically turn the home appliances or lighting on/off. Helping you saving energy and electric fee.
+
+
+6. Relay Status Setting: Never worry about power failure, you can set this switch to restore the state after power on.
+
+
+7. Group Control: Set all of your smart switches in a group by Smart Life app. Then one-click to turn/off all of your appliances or lighting by smartphone.
+
+
+8. Smart Scene: Creating your own scene to trigger ON/OFF home appliances by departure mode, home mode, temperature, humidity, or other environmental conditions.
+
+
+Specifications:
+
+
+App: Smart Life/Tuya smart
+
+Color: white
+
+Output: AC 100-240v 50/60Hz
+
+Input: AC 100-240V 50/60Hz
+
+Wi-Fi: IEEE 802.11b/g/h 2.4GHz
+
+Material: PCV-0
+
+Certified product: CE ROHS
+
+Maximum current: 16A
+
+
+Package Included:
+
+1 * mini smart switch module
+
+1* Manual`,
+		description_si: ``,
 		price: 1600
 	},
 	{
 		id: 'p13',
 		name: 'Smart Garage Controller',
 		desc: 'Smart garage controller to open/close doors remotely with safety sensors.',
-		images: ['/images/smart-garage-controller/image1.png'],
+		images: [
+			'/images/smart-garage-controller/image1.png',
+			'/images/smart-garage-controller/image2.jpeg',
+			'/images/smart-garage-controller/image3.jpeg',
+			'/images/smart-garage-controller/image4.jpeg',
+			'/images/smart-garage-controller/image5.jpeg',
+			'/images/smart-garage-controller/image6.jpeg',
+			'/images/smart-garage-controller/image7.jpeg',
+			'/images/smart-garage-controller/image8.jpeg',
+			'/images/smart-garage-controller/image9.jpeg',
+			'/images/smart-garage-controller/image10.jpeg',
+			'/images/smart-garage-controller/image11.jpeg',
+			'/images/smart-garage-controller/image12.jpeg',
+			'/images/smart-garage-controller/image13.jpeg',
+			'/images/smart-garage-controller/image14.jpeg',
+			'/images/smart-garage-controller/image15.jpeg'
+		],
+		description_en: `Upgrade your garage with the Smart Garage Controller – the ultimate solution for secure, convenient, and modern garage access. Control your garage door from anywhere using your smartphone, ensuring peace of mind whether you’re at home or on the go.
+
+Key Features:
+
+Remote Access: Open or close your garage door from your smartphone via a dedicated app.
+
+Voice Control: Compatible with popular voice assistants like Alexa and Google Assistant.
+
+Safety & Security: Real-time alerts notify you if your garage door is left open or if there is unusual activity.
+
+Easy Installation: Simple setup that works with most standard garage doors.
+
+Smart Automation: Schedule automatic opening or closing times for convenience.
+
+Durable & Reliable: Built to last with high-quality materials for everyday use.
+
+
+Why Choose This Smart Garage Controller?
+
+Never worry about leaving your garage door open.
+
+Enhance home security effortlessly.
+
+Save time and gain convenience with smart automation.
+
+
+Warranty: 6–24 months depending on the model.
+
+Service Area: Island-wide delivery and support available.`,
+		description_si: ``,
 		price: 5500
 	},
 	{
