@@ -1,6 +1,7 @@
 export const PRODUCTS = [
 	{
 		id: 'p1',
+		slug: 'smart-touch-panel-switch',
 		name: 'Smart Touch Panel Switch',
 		desc: 'Smart touch panel switch with WiFi, app scheduling, voice control and elegant finish. 12 months warranty.',
 		images: ['/images/smart-switch/image1.webp'],
@@ -51,6 +52,7 @@ export const PRODUCTS = [
 	},
 	{
 		id: 'p2',
+		slug: 'smart-push-button-switch',
 		name: 'Smart Push Button Switch',
 		desc: 'Push-button smart switch with relay, WiFi control and LED indicator. 12 months warranty.',
 		images: [
@@ -89,6 +91,7 @@ Main Features:
 	},
 	{
 		id: 'p3',
+		slug: 'smart-mcb',
 		name: 'Smart MCB',
 		desc: 'Smart MCB with remote trip alerts, current monitoring and overload protection. 18 months warranty.',
 		images: [
@@ -142,6 +145,7 @@ Wiring: Power must enter from the top and must be Live line + Neutral Line (L+N)
 	},
 	{
 		id: 'p4',
+		slug: 'smart-energy-meter-rccb',
 		name: 'Smart Energy meter(RCCB)',
 		desc: 'Earth leakage (RCCB) with smart notifications and test. 18 months warranty.',
 		images: [
@@ -234,6 +238,7 @@ Note:This meter Only supports 2.4G Wireless Network,  NOT for 5G.`,
 	},
 	{
 		id: 'p5',
+		slug: 'moes-smart-door-lock',
 		name: 'Moes Smart Door Lock',
 		desc: 'Moes smart door lock: fingerprint, PIN, card, app access, logs, backup keys. 24 months warranty.',
 		images: [
@@ -285,6 +290,7 @@ Square copper *2`,
 	},
 	{
 		id: 'p6',
+		slug: 'smart-ir-control',
 		name: 'Smart IR Control',
 		desc: 'Universal IR controller for AC/TV/set-top boxes — add IR devices to your smart home.',
 		images: [
@@ -317,6 +323,7 @@ Power input DC 5V 1A`,
 	},
 	{
 		id: 'p7',
+		slug: 'smart-socket',
 		name: 'Smart Socket',
 		desc: 'Smart socket with power monitoring and remote on/off control.',
 		images: [
@@ -390,6 +397,7 @@ UK Smart Plug Specifications
 	},
 	{
 		id: 'p8',
+		slug: 'smart-socket-base',
 		name: 'Smart Socket Base',
 		desc: 'Smart socket base that supports different plugs, scheduling & remote control.',
 		images: [
@@ -431,6 +439,7 @@ Easily manage your devices from anywhere using your mobile app, or enjoy hands-f
 	},
 	{
 		id: 'p9',
+		slug: 'moes-smart-fan-controller',
 		name: 'Moes Smart Fan Controller',
 		desc: 'Moes fan controller with speed presets, remote and app control.',
 		images: [
@@ -475,6 +484,7 @@ Main Features:
 	},
 	{
 		id: 'p10',
+		slug: 'smart-soil-tester-sensor',
 		name: 'Smart Soil Tester Sensor',
 		desc: 'Soil moisture & nutrient sensor with app alerts — ideal for smart gardening.',
 		images: [
@@ -568,6 +578,7 @@ User manual*1`,
 	},
 	{
 		id: 'p11',
+		slug: 'smart-valve',
 		name: 'Smart Valve',
 		desc: 'Motorized smart valve for irrigation — schedule and control remotely.',
 		images: [
@@ -625,6 +636,7 @@ Voice Command:
 	},
 	{
 		id: 'p12',
+		slug: 'smart-mini-switch',
 		name: 'Smart Mini Switch',
 		desc: 'Mini smart switch 16A — WiFi + Tuya support, voice control, energy monitoring.',
 		images: [
@@ -722,6 +734,7 @@ Package Included:
 	},
 	{
 		id: 'p13',
+		slug: 'smart-garage-controller',
 		name: 'Smart Garage Controller',
 		desc: 'Smart garage controller to open/close doors remotely with safety sensors.',
 		images: [
@@ -775,6 +788,7 @@ Service Area: Island-wide delivery and support available.`,
 	},
 	{
 		id: 'p14',
+		slug: 'intelligent-light-control-system',
 		name: 'Intelligent Light Control System',
 		desc: 'Full intelligent lighting control with scenes, dimming, presence detection and remote management.',
 		images: [
@@ -857,6 +871,7 @@ Package Included:
 	},
 	{
 		id: 'p15',
+		slug: 'smart-door-lock-face-unlocking',
 		name: 'Smart Door Lock + Face Unlocking',
 		desc: 'Advanced smart door locking system with keyless entry, remote access, real-time monitoring, and enhanced security management.',
 		images: [
@@ -900,6 +915,7 @@ Package Included:
 	},
 	{
 		id: 'p16',
+		slug: 'smart-door-bell',
 		name: 'Smart Door Bell',
 		desc: 'Smart doorbell with HD video, two-way communication, motion detection and mobile notifications for enhanced home security.',
 		images: [

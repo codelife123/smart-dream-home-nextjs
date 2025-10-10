@@ -89,7 +89,12 @@ export default function Home() {
       const card = (e.target instanceof Element) ? e.target.closest('.product-card') : null;
       if(card && (e.target instanceof Element) && e.target.classList.contains('viewDetail')){
         const id = card.dataset.id || '';
-        if(id) router.push(`/products/${id}`);
+        const product = PRODUCTS.find(p => p.id === id);
+        const slugify = (s) => s?.toLowerCase()?.trim()?.replace(/[^a-z0-9\s-]/g, "")?.replace(/\s+/g, "-") ?? "";
+        if(product){
+          const slug = product.slug || slugify(product.name);
+          router.push(`/products/${slug}`);
+        }
       }
     });
 

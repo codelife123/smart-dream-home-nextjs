@@ -9,8 +9,14 @@ import { PRODUCTS } from "../../data/products";
 export default function ProductDetail() {
   const router = useRouter();
   const params = useParams();
-  const productId = Array.isArray(params?.id) ? params.id[0] : params?.id;
-  const product = useMemo(() => PRODUCTS.find(p => p.id === productId), [productId]);
+  const productParam = Array.isArray(params?.id) ? params.id[0] : params?.id;
+  const slugify = (s) => s?.toLowerCase()?.trim()?.replace(/[^a-z0-9\s-]/g, "")?.replace(/\s+/g, "-") ?? "";
+  const product = useMemo(() => {
+    const byId = PRODUCTS.find(p => p.id === productParam);
+    if(byId) return byId;
+    const paramSlug = slugify(String(productParam || ""));
+    return PRODUCTS.find(p => slugify(p.name) === paramSlug);
+  }, [productParam]);
   const [variantIndex, setVariantIndex] = useState(0);
   const [qty, setQty] = useState(1);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
@@ -27,7 +33,7 @@ export default function ProductDetail() {
   useEffect(() => {
     setVariantIndex(0);
     setActiveImageIdx(0);
-  }, [productId]);
+  }, [productParam]);
 
   // Keyboard navigation for gallery
   useEffect(() => {
