@@ -5,6 +5,7 @@ import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { PRODUCTS } from "../../data/products";
+import Footer from "../../components/Footer";
 
 export default function ProductDetail() {
   const router = useRouter();
@@ -334,6 +335,8 @@ export default function ProductDetail() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }

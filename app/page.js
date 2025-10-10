@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { PRODUCTS } from "./data/products";
 import NavMenus from "./components/NavMenus";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const router = useRouter();
@@ -354,6 +355,8 @@ export default function Home() {
           </form>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
