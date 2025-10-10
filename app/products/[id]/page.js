@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useEffect, useState } from "react";
+import { useMemo, useEffect, useState, useRef } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -13,11 +13,45 @@ export default function ProductDetail() {
   const product = useMemo(() => PRODUCTS.find(p => p.id === productId), [productId]);
   const [variantIndex, setVariantIndex] = useState(0);
   const [qty, setQty] = useState(1);
+  const [activeImageIdx, setActiveImageIdx] = useState(0);
+  const [isZoomVisible, setIsZoomVisible] = useState(false);
+  const [lensPos, setLensPos] = useState({ x: 0, y: 0, relX: 0.5, relY: 0.5 });
+  const imageWrapRef = useRef(null);
   const hasVariants = Array.isArray(product?.variants) && product.variants.length > 0;
 
   useEffect(() => {
     setVariantIndex(0);
+    setActiveImageIdx(0);
   }, [productId]);
+
+  // Keyboard navigation for gallery
+  useEffect(() => {
+    function onKey(e){
+      if(!product?.images?.length) return;
+      if(e.key === 'ArrowLeft'){
+        setActiveImageIdx(i => (i - 1 + product.images.length) % product.images.length);
+      } else if(e.key === 'ArrowRight'){
+        setActiveImageIdx(i => (i + 1) % product.images.length);
+      }
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [product]);
+
+  const zoomFactor = 3.5;
+  const lensSize = 160;
+  function handleMouseMove(e){
+    const wrap = imageWrapRef.current;
+    if(!wrap) return;
+    const rect = wrap.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const clampedX = Math.max(0, Math.min(rect.width, x));
+    const clampedY = Math.max(0, Math.min(rect.height, y));
+    const relX = rect.width ? clampedX / rect.width : 0.5;
+    const relY = rect.height ? clampedY / rect.height : 0.5;
+    setLensPos({ x: clampedX, y: clampedY, relX, relY });
+  }
 
   if(!product){
     return (
@@ -62,14 +96,86 @@ export default function ProductDetail() {
         </div>
 
         <div className="bg-white rounded-2xl p-6 shadow">
-          <div className="flex flex-col md:flex-row gap-6">
-            {product.images && product.images[0] ? (
-              <Image src={product.images[0]} alt={product.name} width={320} height={320} className="w-full md:w-80 h-80 object-cover rounded" />
-            ) : null}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Gallery */}
+            <div>
+              <div
+                ref={imageWrapRef}
+                className="relative group rounded-2xl overflow-hidden bg-gray-50 border"
+                onMouseEnter={() => setIsZoomVisible(true)}
+                onMouseLeave={() => setIsZoomVisible(false)}
+                onMouseMove={handleMouseMove}
+              >
+                {product.images && product.images.length ? (
+                  <Image
+                    src={product.images[activeImageIdx]}
+                    alt={product.name}
+                    width={800}
+                    height={800}
+                    className="w-full h-[420px] md:h-[520px] object-cover"
+                    priority
+                  />
+                ) : null}
+                {isZoomVisible && product.images && product.images.length ? (
+                  <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none">
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        transform: `scale(${zoomFactor})`,
+                        transformOrigin: `${lensPos.relX * 100}% ${lensPos.relY * 100}%`,
+                      }}
+                    >
+                      <Image
+                        src={product.images[activeImageIdx]}
+                        alt="zoom"
+                        fill
+                        sizes="(min-width: 1024px) 520px, 100vw"
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  </div>
+                ) : null}
+                {product.images && product.images.length > 1 ? (
+                  <>
+                    <button
+                      aria-label="Previous image"
+                      onClick={() => setActiveImageIdx((i) => (i - 1 + product.images.length) % product.images.length)}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full w-10 h-10 shadow flex items-center justify-center"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      aria-label="Next image"
+                      onClick={() => setActiveImageIdx((i) => (i + 1) % product.images.length)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full w-10 h-10 shadow flex items-center justify-center"
+                    >
+                      ›
+                    </button>
+                  </>
+                ) : null}
+              </div>
+              {product.images && product.images.length ? (
+                <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
+                  {product.images.map((src, idx) => (
+                    <button
+                      key={src + idx}
+                      onClick={() => setActiveImageIdx(idx)}
+                      className={`relative shrink-0 rounded-xl border ${idx === activeImageIdx ? 'border-green-600 ring-2 ring-green-200' : 'border-gray-200'} overflow-hidden`}
+                      style={{width:88, height:88}}
+                      aria-label={`Thumbnail ${idx+1}`}
+                    >
+                      <Image src={src} alt="thumb" width={88} height={88} className="w-[88px] h-[88px] object-cover" />
+                    </button>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+            {/* Content */}
             <div className="flex-1">
-              <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
-              <p className="text-gray-700 mb-4">{product.desc}</p>
-              <div className="text-green-700 font-semibold mb-4">Rs. {currentPrice.toLocaleString()}</div>
+              <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">{product.name}</h1>
+              <div className="text-2xl md:text-3xl font-bold text-green-700 mb-3">Rs. {currentPrice.toLocaleString()}</div>
+              <p className="text-gray-700 text-base md:text-lg mb-5">{product.desc}</p>
               {hasVariants && (
                 <div className="mb-4">
                   <label className="block text-sm font-medium mb-1">Variant</label>
@@ -82,11 +188,11 @@ export default function ProductDetail() {
               )}
               <div className="flex items-center gap-3 mb-6">
                 <label className="text-sm">Qty:</label>
-                <input className="w-20 p-2 border rounded" type="number" min={1} value={qty} onChange={(e)=> setQty(Math.max(1, Number(e.target.value) || 1))} />
+                <input className="w-24 p-2 border rounded" type="number" min={1} value={qty} onChange={(e)=> setQty(Math.max(1, Number(e.target.value) || 1))} />
               </div>
-              <div className="flex gap-3">
-                <button onClick={addToCart} className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">🛒 Add to Cart</button>
-                <a href={`https://wa.me/94764511276?text=${encodeURIComponent(product.name)}`} target="_blank" className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Enquiry via WhatsApp</a>
+              <div className="flex flex-wrap gap-3">
+                <button onClick={addToCart} className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 font-semibold">🛒 Add to Cart</button>
+                <a href={`https://wa.me/94764511276?text=${encodeURIComponent(product.name)}`} target="_blank" className="bg-gray-200 px-6 py-3 rounded-lg hover:bg-gray-300 font-semibold">Enquiry via WhatsApp</a>
               </div>
             </div>
           </div>
