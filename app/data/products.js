@@ -1001,6 +1001,514 @@ Package list:
 1*Some Screws`,
 		description_si: ``,
 		price: 5000
+	},
+	{
+		id: 'p17',
+		slug: 'tuya-wifi-door-window-sensor',
+		name: 'Tuya wifi Door Window sensor',
+		desc: '',
+		images: [
+			'/images/tuya-wifi-door-window-sensor/image1.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image2.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image3.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image4.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image5.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image6.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image7.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image8.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image9.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image10.jpeg',
+			'/images/tuya-wifi-door-window-sensor/image11.jpeg',
+		],
+		description_en: `1. The sensor is not waterproof, please note that the installation position.
+
+2. It requires WiFi  2.4GHz and does not support 5GHz WiFi frequency.
+
+3. The Shrews installation package is not included.
+
+4. Battery is not included.
+Product Features:
+
+1. Instant Notification
+Push instant notification to your phone immediately when door or window is opened or closed. Keeping you informed all the time.
+2. Alarm Alert
+Whenever the sensor is triggered to open/close, it will send alarm to alert you that someone opens your door or window.
+3. Alarm Recording
+Support checking open / close records and battery level on the app. Never worry about missing any important moments or running out of battery.
+4. Device Share
+Select “Home Management” in the “Me” page to share your added sensors with family members. so that they can also monitor the status of doors/windows.
+5. Low Voltage Remind
+When battery level is low, it will automatically remind you to change batteries, never worry
+about running out of battery.
+
+
+
+Product Parameter
+
+* Battery: LR03-1.5V/AAA*2(not include)
+* Battery Life: 6000 times trigger
+* Wireless Type: WiFi 2.4GHz
+* Working Temperature: 0℃～40℃ (32℉ ～104℉ ）
+* Working Humidity: 20%～85% RH
+* Storage Temperature: 0℃～60℃ (32℉ ～140℉ ）
+* Storage Humidity: 0%～90% RH
+* App: Tuya smart or Smart life
+* Supports Android 4.4 and iOS 8.0 or newer
+* Material: ABS
+* Size:
+(Main body): 71mm x 25mm x20 mm
+(Small body): 36mm x 10mm x 17 mm
+
+
+
+
+
+Safeguard your home
+1, Real Time Alert and Notification
+2, Open or Close Detection
+3, 7*24 Protection`,
+		description_si: ``,
+		price: 2200
+	},
+	{
+		id: 'p18',
+		slug: 'tuya-smart-wifi-temperature-humidity-sensor',
+		name: 'Tuya smart wifi Temperature & Humidity sensor',
+		desc: '',
+		images: [
+			'/images/tuya-smart-wifi-temperature-humidity-sensor/image1.jpeg',
+			'/images/tuya-smart-wifi-temperature-humidity-sensor/image2.jpeg',
+			'/images/tuya-smart-wifi-temperature-humidity-sensor/image3.jpeg',
+			'/images/tuya-smart-wifi-temperature-humidity-sensor/image4.jpeg',
+			'/images/tuya-smart-wifi-temperature-humidity-sensor/image5.jpeg',
+			'/images/tuya-smart-wifi-temperature-humidity-sensor/image6.jpeg',
+			'/images/tuya-smart-wifi-temperature-humidity-sensor/image7.jpeg',
+		],
+		description_en: `WiFi Connectivity :Connects to your home WiFi network, allowing you to monitor temperature and humidity from anywhere using your smartphone.
+
+Voice Control Compatibility :Works with Alexa and Google Home, allowing you to control the temperature and humidity with your voice.
+
+Battery-Powered :Operates on battery power(no included battery), making it easy to install without any wiring or complicated setup.
+
+App Monitoring :The app allows you to monitor temperature and humidity levels in real-time, giving you the ability to adjust the settings to suit your needs.
+
+Product parameters for WIFI version:
+
+APP name: Tuya Smart or Smart Life
+
+Work with Alexa/Google Assistance
+
+Built-in Battery: AAA1.5V*2 (Not include battery in the shipment)
+
+WiFi: 2.4GHz
+
+Noted: User can remotely view temperature and humidity via smartphone using the app tuya smart or smart life.
+
+Product package included:
+
+1 x Temperature and humidity Sensor (Not include battery)
+
+1 x Sticker
+
+1 x User manual`,
+		description_si: ``,
+		price: 2200
+	},
+	{
+		id: 'p19',
+		slug: 'tuya-smart-wifi-valve',
+		name: 'Tuya Smart Wifi Valve',
+		desc: '',
+		images: [
+			'/images/tuya-smart-wifi-valve/image1.jpeg',
+			'/images/tuya-smart-wifi-valve/image2.jpeg',
+			'/images/tuya-smart-wifi-valve/image3.jpeg',
+			'/images/tuya-smart-wifi-valve/image4.jpeg',
+			'/images/tuya-smart-wifi-valve/image5.jpeg',
+			'/images/tuya-smart-wifi-valve/image6.jpeg',
+			'/images/tuya-smart-wifi-valve/image7.jpeg',
+		],
+		description_en: `Power adapter input: 100V-240V
+Power adapter output: DC12V 1A
+WiFi: 2.4GHz only
+Radio Range: 30 meters
+Valve pressure: 1.6 meters
+Valve pressure: 1.6MPA
+Time off valve auto: 5-10 seconds
+Time off valve electric: 5-10 seconds
+Torque: 30-60kgf.cm
+Power cord: 2.3 meters (0.9 meter from power adapter, 1.4 meter from the body)
+Power cord extendable with 5.5x2.1mm size DC male-famale cord.
+
+A Smart Add-on for your Existing Water or Gas Ball Valve
+
+Simply add this smart valve controller to your water valve or gas shutoff valve, you can simple control the water supply or turn off gas valve from anywhere at any time with your smartphone, using free Smart Life app.
+
+Works with Amazon Alexa and Google Home
+
+When paired with the Amazon Alexa or Google Assistant, the smart shut off valve gives you hands - free voice control over your home.
+
+Voice Command:
+
+"Hey, Google, Turn ON/OFF DEVICE NAME"
+"Alexa, Turn ON/OFF DEVICE NAME"`,
+		description_si: ``,
+		price: 7800
+	},
+	{
+		id: 'p20',
+		slug: 'rtu-5024-gsm-gate-opener',
+		name: 'RTU 5024 GSM Gate Opener',
+		desc: '',
+		images: [
+			'/images/rtu-5024-gsm-gate-opener/image1.jpeg',
+			'/images/rtu-5024-gsm-gate-opener/image2.jpeg',
+			'/images/rtu-5024-gsm-gate-opener/image3.jpeg',
+			'/images/rtu-5024-gsm-gate-opener/image4.jpeg',
+			'/images/rtu-5024-gsm-gate-opener/image5.jpeg',
+			'/images/rtu-5024-gsm-gate-opener/image6.jpeg',
+		],
+		description_en: `Specifications:
+
+GSM Frequency: Quad-band 850/900/1800/1900MHz
+Digital Output: NC/NO dry contact, 3A/240VAC
+DC Power Supply: 9-24VDC/2A
+Power Consumption: 12V Input Max.50mA/Average 25mA
+SIM Card: Support 3V SIM Card
+Antenna: 50Ω SMA Antenna Interface
+Temperature Range: -20～+60℃
+Humidity Range: Relative Humidity 90%
+Exterior Dimension: W82mm*D76mm*H27mm
+
+Features:
+
+- Add or remove users by SMS Text command.
+- The relay close or open time is programmable.
+- Can be operated from anywhere, no distance limit.
+- Quad-band, can work in the worldwide GSM Networks.
+- No need to provide a remote control or keys for different users.
+- Secure - Using caller-ID for identification, unknown callers are ignored.
+- Up to 200 authorized phone numbers can be configured at the specified time.
+- One output with relay rating 3A/240VAC for connecting the switch of the door or machines.
+- Multiple applications. (gates, bollards, barriers, garage doors, shutters and access doors or machines).
+- The relay action will return a SMS confirmation to the owner or authorized call in number, this function is editable by user.
+- No call charges. the GSM GPRS Relay Switch rejects the call from authorized number then carries out the turn ON/OFF action on the first 'ring'.
+
+Package Included:
+
+1 x RTU5024 GSM Gate Opener
+1 x Good Gain Antenna`,
+		description_si: ``,
+		price: 11000
+	},
+	{
+		id: 'p21',
+		slug: 'universal-gate-remote',
+		name: 'Universal Gate Remote',
+		desc: '',
+		images: [
+			'/images/universal-gate-remote/image1.jpeg',
+			'/images/universal-gate-remote/image2.jpeg',
+			'/images/universal-gate-remote/image3.jpeg',
+			'/images/universal-gate-remote/image4.jpeg',
+		],
+		description_en: `1.Product name: 2-button wireless remote control J-XLJ201
+
+2.Product size: 42 × 25mm
+
+3.Working voltage: DC6V
+
+4.Working current: ≤8mA
+
+5.Trans with power: + 13dbm
+
+6.Remote control distance: 100M distance from the open field (open)；
+
+7.Modulation method: ASK
+
+8.Frequency deviation: ±0.2MHz；
+
+9.Transmission rate: 50-60KHZ；
+
+10.Oscillation resistance: according to customer requirements；
+
+11.Code matching method: EV1527 single chip microcomputer, etc.
+
+12.Working environment: -15~75 degrees Celsius
+
+13.Working frequency: 315MHZ/433MHZ is in stock, 270MHZ-434MHZ and other frequencies need to be customized
+
+14.Shell color: black`,
+		description_si: ``,
+		price: 1200
+	},
+	{
+		id: 'p22',
+		slug: 'tuya-smart-wifi-smart-water-leakage-sensor',
+		name: 'Tuya Smart Wifi Smart Water Leakage Sensor',
+		desc: '',
+		images: [
+			'/images/tuya-smart-wifi-smart-water-leakage-sensor/image1.jpeg',
+			'/images/tuya-smart-wifi-smart-water-leakage-sensor/image2.jpeg',
+			'/images/tuya-smart-wifi-smart-water-leakage-sensor/image3.jpeg',
+			'/images/tuya-smart-wifi-smart-water-leakage-sensor/image4.jpeg',
+			'/images/tuya-smart-wifi-smart-water-leakage-sensor/image5.jpeg',
+			'/images/tuya-smart-wifi-smart-water-leakage-sensor/image6.jpeg',
+			'/images/tuya-smart-wifi-smart-water-leakage-sensor/image7.jpeg',
+		],
+		description_en: `Multi-Sensor Compatibility:Easily monitor multiple water sensors within the Tuya app, streamlining your smart home security.
+
+Easy Installation:No tools needed; simply hang the sensor with adhesive tape or screws for a quick setup.
+
+Water Sense Detection:Highly sensitive probe detects shallow leaks, providing early warnings for timely action.
+
+Wireless Connectivity:Seamlessly integrates with Tuya Smart/Smart Life APP for remote monitoring, ensuring you're alerted to leaks from anywhere.
+
+Long Standby Time:Enjoy peace of mind with a standby time of 4-6 months, reducing the need for frequent battery replacements.
+
+
+
+Product parameters:
+
+◆ APP name: Tuya Smart or Smart Life
+
+◆ Battery type: AAA1.5V*2 (Not included in shipment)
+
+◆ Low-battery remind function
+
+◆ WIFI: 2.4G
+
+◆ Water leak detection
+
+◆ Support all Tuya smart product Linkage control
+
+◆ Working Temperature: -10℃～+50℃
+
+Package Includes:
+
+1 *Sensor
+
+1*Sticker
+
+1* Instruction`,
+		description_si: ``,
+		price: 2800
+	},
+	{
+		id: 'p23',
+		slug: 'wireless-wifi-repeater',
+		name: 'Wireless WiFi repeater',
+		desc: '',
+		images: [
+			'/images/wireless-wifi-repeater/image2.jpeg',
+			'/images/wireless-wifi-repeater/image1.jpeg',
+			'/images/wireless-wifi-repeater/image3.jpeg',
+			'/images/wireless-wifi-repeater/image4.jpeg',
+			'/images/wireless-wifi-repeater/image5.jpeg',
+			'/images/wireless-wifi-repeater/image6.jpeg',
+			'/images/wireless-wifi-repeater/image7.jpeg',
+			'/images/wireless-wifi-repeater/image8.jpeg',
+			'/images/wireless-wifi-repeater/image9.jpeg',
+		],
+		description_en: `The WiFi extender uses brand-new software technology, simple to set up and easy to use.
+
+.Universal compatibility and easy setup: This WiFi extender can be used with any 802.11b/g/n/a wireless internet router, which means it can be used with any standard router or gateway.
+
+.WISP mode/AP mode, most home users will set it up in one of two ways: 2. Range extender (it connects to your existing wireless network wirelessly and enhances/extends the signal) or 3. Access Point (it connects to the Internet or your existing network via Ethernet and then broadcasts the wireless signal (this is how you use it).
+
+.Easy to set up: You can use PC/smartphone/laptop to set up. (Smartphone settings are simpler), connect to WiFi, enter the password to complete the setting.
+
+.If you have a dead wireless zone in a corner of your house. Please do not place it directly in a blind spot (because it cannot receive the existing signal to expand it out). Please be sure to play in different places to place it, and you will find a great location. I put it in a location with some wifi signals, set everything up, and then walked to the "dead zone".
+
+
+
+Features：
+
+1. Improve the coverage of wireless WIFI network
+
+2. Wireless high-speed access to WIFI, wireless standard 802.11n
+
+3. Backward compatible with 802.11g and 802.11b standards
+
+4. WIFI security, support WPA2, WPA and WEP (128/64) encryption
+
+5. Simple setup wizard software interface
+
+6. WPS one-click encryption
+
+Product size: 8.0 * 5.3 * 5.1cm (without plug)
+
+Function: not with a line can be used as a repeater, plug in the line can be used as a router`,
+		description_si: ``,
+		price: 2700
+	},
+	{
+		id: 'p24',
+		slug: 'wireless-push-button-self-power-door-bell',
+		name: 'Wireless push button self power Door bell',
+		desc: '',
+		images: [
+			'/images/wireless-push-button-self-power-door-bell/image1.jpeg',
+			'/images/wireless-push-button-self-power-door-bell/image2.jpeg',
+			'/images/wireless-push-button-self-power-door-bell/image3.jpeg',
+			'/images/wireless-push-button-self-power-door-bell/image4.jpeg',
+			'/images/wireless-push-button-self-power-door-bell/image5.jpeg',
+			'/images/wireless-push-button-self-power-door-bell/image6.jpeg',
+			'/images/wireless-push-button-self-power-door-bell/image7.jpeg',
+			'/images/wireless-push-button-self-power-door-bell/image8.jpeg',
+		],
+		description_en: `Technical parametersTechnical parameters
+
+1. Operating voltage: AC 100-220V
+
+2. Working current: <100 mA
+
+3. Wireless frequency: 433 MHz
+
+4. Operating temperature: -10 ° C-50 ° C
+
+5. Wireless distance: 150 meters (open space)`,
+		description_si: ``,
+		price: 2500
+	},
+	{
+		id: 'p25',
+		slug: 'universal-rf-433mhz-gate-remote-controller-switch',
+		name: 'Universal RF 433Mhz Gate Remote controller switch',
+		desc: '',
+		images: [
+			'/images/universal-gate-remote-controller-switch/image1.jpeg',
+			'/images/universal-gate-remote-controller-switch/image2.jpeg',
+			'/images/universal-gate-remote-controller-switch/image3.jpeg',
+			'/images/universal-gate-remote-controller-switch/image4.jpeg',
+		],
+		description_en: `Specifications:
+
+Receiver(switch)
+Input voltage: DC 12V
+Working current: 10A
+Maximum load power: 110W
+Frequency: 433Mhz
+Support encoding format: EV1527
+Wiring method: NC COM NO
+Working mode: Momentary, Toggle, Latching Time delay (5s ,10s ,15s )
+
+Remote Controller:
+Operating RF Frequency: 433MHz.
+Coded System: 1527 Learning Code.
+Working Voltage: DC 3V.
+Working Current: <25mA
+Transmitting Power: 10mW.
+Wireless Operating Distance: 50m(Free Space).
+Transmission Rate: 50 ~ 60KHz.
+Frequency Deviation: +0.2MHz or -0.2MHz.
+Color: Black.
+
+About Working Mode:
+
+Momentary: Press the remote button, the relay connects, release the remote button, the relay disconnects.
+Toggle: Press once the remote button, the relay connects, press the remote button twice, the relay disconnects.
+Latching: Press the remote button A, the relay connects, press the remote button B, the relay disconnect.
+Time Delay Mode: Press the remote control button, the relay connects; Start timing when release the remote button, the relay disconnect automatically after 5s or 10s or 15s
+
+
+Please Note:
+
+The system can store for 25 pcs of remotes , if the remote get more than 25 pcs , the initial remote control will be lost .
+`,
+		description_si: ``,
+		price: 1600
+	},
+	{
+		id: 'p26',
+		slug: 'rf-433mhz-wireless-remote-control-switch',
+		name: 'RF 433Mhz wireless remote control switch',
+		desc: 'RF Wireless Remote Control Switch 433Mhz AC 72V-220V Relay for Light Lamp Water Pump Door Access System',
+		images: [
+			'/images/wireless-remote-control-switch/image1.jpeg',
+			'/images/wireless-remote-control-switch/image2.jpeg',
+			'/images/wireless-remote-control-switch/image3.jpeg',
+			'/images/wireless-remote-control-switch/image4.jpeg',
+			'/images/wireless-remote-control-switch/image5.jpeg',
+			'/images/wireless-remote-control-switch/image6.jpeg',
+			'/images/wireless-remote-control-switch/image7.jpeg',
+		],
+		description_en: `
+Features
+
+
+Convenient to install and easy to use.
+
+It can be used in homes, farms, factories, offices, laboratories, supermarkets and so on.
+
+You can remotely operate every device connect with the relay receiver through the remote control.
+
+It can be used in lights, pump, wireless security alarm, fan, lamp, wireless door alarm, ventilation device, monitor, printer, fountain, etc.
+
+The wireless signal can pass through walls, floors and doors; Max range is up to 328ft with no obstacle.
+
+Stable performance and low-power consumption, long service life.
+
+
+
+
+Remote control
+
+
+Operating Settings:
+
+Working Mode:
+
+Momentary: Relay: Press and hold -> On; Release -> Off.
+
+Toggle: Relay: Press -> On; Press same button again -> Off·
+
+Latched: Relay: Press -> On; Press other button -> Off.
+
+
+
+Delay time :
+
+Press remote control button, the corresponding relay actuates and keeps working until the time out.
+
+
+
+How to Reset?
+
+
+Long press the learning button for about 8 seconds until the indicator light flashes, succeed.
+
+After reset, all transmitters will no longer function and need to learn again.
+
+How to set Latched Mode?
+
+Press the Learning Button 3 times, the Led indicator flash 3 times, then press button A, after 3 seconds then press button B, the Led indicator flash for 3 times, learning succeed.
+
+We set Latched Mode as default mode, if you want to set other mode, please check user manual for reference.
+
+About Receiver
+
+Operating Voltage: AC 72V-220V
+
+Receiving Range: 328ft (Open space)
+
+Operating Mode: Momentary/Toggle/Latched/Delay mode
+
+RF Frequency: 433MHz
+
+DC Encoding Type: Learning code
+
+RF Channel: One
+
+Transmitter Support: Max 26
+
+Input Terminals: Live (L) and Neutral (N) electrodes
+
+Output Terminals: Live (L) and Neutral (N) electrodes
+
+Case Construction: ABS Plastic`,
+		description_si: ``,
+		price: 2800
 	}
 ];
 
