@@ -59,7 +59,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#warranty" className="text-gray-300 hover:text-green-400 transition-colors">
+                <a href="/warranty" className="text-gray-300 hover:text-green-400 transition-colors">
                   Warranty & Returns
                 </a>
               </li>

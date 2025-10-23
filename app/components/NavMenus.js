@@ -44,7 +44,7 @@ export default function NavMenus() {
         <a href="#home" className="tab bg-green-600 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Home</a>
         <a href="#products" className="tab bg-red-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Products</a>
         <a href="#about" className="tab bg-blue-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">About Us</a>
-        <a href="#warranty" className="tab bg-yellow-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Warranty & Returns</a>
+        <a href="/warranty" className="tab bg-yellow-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Warranty & Returns</a>
         <a href="#services" className="tab bg-purple-600 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Our Services</a>
       </div>
       <div className="md:hidden fixed bottom-4 right-4 z-50">
@@ -53,7 +53,7 @@ export default function NavMenus() {
           <a href="#home" className="tab bg-green-600 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Home</a>
           <a href="#products" className="tab bg-red-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Products</a>
           <a href="#about" className="tab bg-blue-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">About Us</a>
-          <a href="#warranty" className="tab bg-yellow-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Warranty & Returns</a>
+          <a href="/warranty" className="tab bg-yellow-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Warranty & Returns</a>
           <a href="#services" className="tab bg-purple-600 text-white px-4 py-2 rounded-lg text-center shadow">Our Services</a>
         </div>
       </div>
