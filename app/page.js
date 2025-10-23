@@ -274,7 +274,15 @@ export default function Home() {
 
       <section id="warranty" className="max-w-6xl mx-auto py-12 px-4 bg-gray-50">
         <h2 className="text-3xl font-bold text-center mb-6">Warranty & Returns</h2>
-        <p className="text-center text-gray-700">Warranty ranges from 6 to 24 months depending on product. Contact via WhatsApp for quick support.</p>
+        <div className="text-center">
+          <p className="text-gray-700 mb-6">Warranty ranges from 6 to 24 months depending on product. Contact via WhatsApp for quick support.</p>
+          <a 
+            href="/warranty" 
+            className="inline-block bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors shadow-lg"
+          >
+            View Full Policy
+          </a>
+        </div>
       </section>
 
       <section id="services" className="max-w-6xl mx-auto py-12 px-4">
