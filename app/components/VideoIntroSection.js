@@ -52,15 +52,15 @@ export default function VideoIntroSection() {
         )}
 
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 z-20"></div>
+        <div className=" inset-0 bg-black bg-opacity-50 z-20"></div>
 
         {/* Content Overlay - Desktop */}
         <div className="absolute inset-0 flex items-center justify-center z-30">
           <div className="text-center text-white px-6 max-w-4xl mx-auto">
-            <h2 className="text-5xl font-bold mb-6 leading-tight">
+            <h2 className="hidden text-5xl font-bold mb-6 leading-tight">
               Experience the Future of Smart Living
             </h2>
-            <p className="text-xl mb-8 opacity-90 leading-relaxed">
+            <p className="hidden text-xl mb-8 opacity-90 leading-relaxed">
               Transform your home with our cutting-edge smart devices. 
               From intelligent lighting to advanced security systems, 
               discover how technology can make your life easier and more comfortable.
@@ -83,7 +83,7 @@ export default function VideoIntroSection() {
             {/* CTA Button */}
             <button
               onClick={scrollToProducts}
-              className="inline-flex items-center bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg"
+              className="absolute top-8  inline-flex items-center bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg"
             >
               <span className="mr-2">🛍️</span>
               Explore Our Products
