@@ -6,6 +6,7 @@ import Image from "next/image";
 import { PRODUCTS } from "./data/products";
 import NavMenus from "./components/NavMenus";
 import Footer from "./components/Footer";
+import VideoIntroSection from "./components/VideoIntroSection";
 
 export default function Home() {
   const router = useRouter();
@@ -261,6 +262,8 @@ export default function Home() {
           <button className="w-3 h-3 rounded-full bg-gray-300 dot"></button>
         </div>
       </section>
+
+      <VideoIntroSection />
 
       <section id="products" className="max-w-7xl mx-auto py-12 px-4">
         <h2 className="text-3xl font-bold text-center mb-8">Our Products</h2>
