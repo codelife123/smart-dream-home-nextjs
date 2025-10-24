@@ -1,71 +1,17 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function VideoIntroSection() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const desktopVideoRef = useRef(null);
-  const mobileVideoRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Load YouTube IFrame API
-    if (!window.YT) {
-      const tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
+    // Set loading to false after component mounts
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
 
-    // Initialize players when API is ready
-    window.onYouTubeIframeAPIReady = () => {
-      const playerConfig = {
-        height: '100%',
-        width: '100%',
-        videoId: 'UJed1D_PKgA',
-        playerVars: {
-          autoplay: 1,
-          mute: 1,
-          controls: 0,
-          showinfo: 0,
-          rel: 0,
-          loop: 1,
-          playlist: 'UJed1D_PKgA',
-          modestbranding: 1,
-          iv_load_policy: 3,
-          fs: 0,
-          cc_load_policy: 0,
-          playsinline: 1,
-          disablekb: 1
-        },
-        events: {
-          onReady: (event) => {
-            setIsVideoLoaded(true);
-            event.target.playVideo();
-          },
-          onStateChange: (event) => {
-            // Loop the video when it ends
-            if (event.data === window.YT.PlayerState.ENDED) {
-              event.target.playVideo();
-            }
-          }
-        }
-      };
-
-      // Initialize desktop player
-      if (desktopVideoRef.current) {
-        new window.YT.Player(desktopVideoRef.current, playerConfig);
-      }
-
-      // Initialize mobile player
-      if (mobileVideoRef.current) {
-        new window.YT.Player(mobileVideoRef.current, playerConfig);
-      }
-    };
-
-    // If API is already loaded, initialize immediately
-    if (window.YT && window.YT.Player) {
-      window.onYouTubeIframeAPIReady();
-    }
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToProducts = () => {
@@ -76,30 +22,34 @@ export default function VideoIntroSection() {
   };
 
   return (
-    <section className="w-full min-h-screen bg-black">
+    <section className="w-full bg-black">
       {/* Desktop Layout */}
-      <div className="hidden md:block relative w-full h-screen overflow-hidden">
-        {/* Video Background */}
-        <div className="w-full h-full">
-          <div 
-            ref={desktopVideoRef}
+      <div className="hidden md:block relative w-full h-screen">
+        {/* Video Container */}
+        <div className="w-full h-full overflow-hidden">
+          <iframe
             className="w-full h-full"
             style={{
               transform: 'scale(1.1)',
               transformOrigin: 'center center'
             }}
+            src="https://www.youtube.com/embed/UJed1D_PKgA?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=UJed1D_PKgA&modestbranding=1&iv_load_policy=3&fs=0&cc_load_policy=0&playsinline=1&disablekb=1"
+            title="Smart Home Introduction"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
           />
-          
-          {/* Loading overlay */}
-          {!isVideoLoaded && (
-            <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-30">
-              <div className="text-white text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-                <p className="text-lg">Loading video...</p>
-              </div>
-            </div>
-          )}
         </div>
+        
+        {/* Loading overlay */}
+        {isLoading && (
+          <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-30">
+            <div className="text-white text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+              <p className="text-lg">Loading video...</p>
+            </div>
+          </div>
+        )}
 
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black bg-opacity-50 z-20"></div>
@@ -166,21 +116,21 @@ export default function VideoIntroSection() {
       <div className="md:hidden">
         {/* Video Section - Mobile */}
         <div className="relative w-full h-64 overflow-hidden">
-          <div 
+          <iframe
             className="w-full h-full"
             style={{
               transform: 'scale(1.1)',
               transformOrigin: 'center center'
             }}
-          >
-            <div 
-              ref={mobileVideoRef}
-              className="w-full h-full"
-            />
-          </div>
+            src="https://www.youtube.com/embed/UJed1D_PKgA?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=UJed1D_PKgA&modestbranding=1&iv_load_policy=3&fs=0&cc_load_policy=0&playsinline=1&disablekb=1"
+            title="Smart Home Introduction"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
           
           {/* Loading overlay - Mobile */}
-          {!isVideoLoaded && (
+          {isLoading && (
             <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-30">
               <div className="text-white text-center">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
