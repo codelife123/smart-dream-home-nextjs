@@ -30,7 +30,7 @@ export default function VideoIntroSection() {
           <iframe
             className="w-full h-full"
             style={{
-              transform: 'scale(1.1)',
+              transform: 'scale(1.0)',
               transformOrigin: 'center center'
             }}
             src="https://www.youtube.com/embed/UJed1D_PKgA?autoplay=1&mute=0&controls=0&showinfo=0&rel=0&loop=1&playlist=UJed1D_PKgA&modestbranding=1&iv_load_policy=3&fs=0&cc_load_policy=0&playsinline=1&disablekb=1"
