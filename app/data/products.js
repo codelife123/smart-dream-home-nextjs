@@ -1,8 +1,8 @@
 export const PRODUCTS = [
 	{
 		id: 'p1',
-		slug: 'smart-touch-panel-switch',
-		name: 'Smart Touch Panel Switch',
+		slug: 'tuya-smart-touch-panel-switch',
+		name: 'tuya Smart Touch Panel Switch',
 		desc: 'Smart touch panel switch with WiFi, app scheduling, voice control and elegant finish. 12 months warranty.',
 		images: ['/images/smart-switch/image1.webp'],
 		description_en: '✨ Upgrade Your Home with a Smart Switch! ✨\n' +
