@@ -43,7 +43,7 @@ export default function NavMenus() {
       <div id="tabs" className="hidden md:flex flex-col space-y-4 fixed top-1/3 right-6 z-30">
         <a href="#home" className="tab bg-green-600 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Home</a>
         <a href="#products" className="tab bg-red-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Products</a>
-        <a href="#about" className="tab bg-blue-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">About Us</a>
+        <a href="/about" className="tab bg-blue-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">About Us</a>
         <a href="/warranty" className="tab bg-yellow-500 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Warranty & Returns</a>
         <a href="#services" className="tab bg-purple-600 text-white px-4 py-2 rounded-l-full font-bold text-center shadow">Our Services</a>
       </div>
@@ -52,7 +52,7 @@ export default function NavMenus() {
         <div id="mobileTabs" className="hide bg-white rounded-xl shadow-lg p-2 mt-2">
           <a href="#home" className="tab bg-green-600 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Home</a>
           <a href="#products" className="tab bg-red-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Products</a>
-          <a href="#about" className="tab bg-blue-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">About Us</a>
+          <a href="/about" className="tab bg-blue-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">About Us</a>
           <a href="/warranty" className="tab bg-yellow-500 text-white px-4 py-2 rounded-lg text-center shadow mb-2">Warranty & Returns</a>
           <a href="#services" className="tab bg-purple-600 text-white px-4 py-2 rounded-lg text-center shadow">Our Services</a>
         </div>

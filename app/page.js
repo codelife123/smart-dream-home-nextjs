@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import { PRODUCTS } from "./data/products";
 import NavMenus from "./components/NavMenus";
@@ -259,7 +260,15 @@ export default function Home() {
 
       <section id="about" className="max-w-6xl mx-auto py-12 px-4">
         <h2 className="text-3xl font-bold text-center mb-6">About Us</h2>
-        <p className="text-center text-gray-700">Smart Dream Home supplies a wide range of smart home devices across Sri Lanka. Support & warranty available.</p>
+        <p className="text-center text-gray-700 mb-6">Smart Dream Home supplies a wide range of smart home devices across Sri Lanka. Support & warranty available.</p>
+        <div className="text-center">
+          <Link 
+            href="/about" 
+            className="inline-block bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors shadow-lg"
+          >
+            Learn More About Us
+          </Link>
+        </div>
       </section>
 
       <section id="warranty" className="max-w-6xl mx-auto py-12 px-4 bg-gray-50">

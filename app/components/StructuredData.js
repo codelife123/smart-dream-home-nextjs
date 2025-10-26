@@ -182,3 +182,84 @@ export function WebsiteSchema() {
     />
   );
 }
+
+export function AboutPageSchema() {
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Smart Dream Home Lanka",
+    "description": "Smart Dream Home Sri Lanka – Your trusted source for smart switches, door locks, and home automation solutions. Island-wide delivery & warranty.",
+    "url": "https://www.smartdreamhomelanka.com/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Smart Dream Home Lanka",
+      "alternateName": "Smart Dream Home",
+      "url": "https://www.smartdreamhomelanka.com",
+      "logo": "https://www.smartdreamhomelanka.com/images/smart_touch_panel.webp",
+      "description": "Sri Lanka's trusted supplier of smart switches, smart home gadgets, and home automation solutions.",
+      "foundingDate": "2024",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kandy",
+        "addressCountry": "LK",
+        "addressRegion": "Sri Lanka"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+94764511276",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Sinhala"],
+        "areaServed": "LK"
+      },
+      "sameAs": [
+        "https://wa.me/94764511276"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      },
+      "knowsAbout": [
+        "Smart Switches",
+        "Smart Door Locks", 
+        "Smart Door Bells",
+        "Smart MCBs",
+        "Smart Voltage Protectors",
+        "Smart IR Controllers",
+        "Smart Sensors",
+        "Smart Sockets",
+        "Home Automation",
+        "Polytunnel Solutions"
+      ],
+      "makesOffer": {
+        "@type": "Offer",
+        "description": "Smart home devices with 6-24 months warranty",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "LKR"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "LKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "businessDays": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            }
+          }
+        }
+      }
+    }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+    />
+  );
+}
