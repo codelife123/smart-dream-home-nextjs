@@ -86,12 +86,12 @@ export default function AboutPage() {
               <div className="bg-green-100 p-3 rounded-full mr-4">
                 <span className="text-2xl">🏠</span>
               </div>
-              <h2 className="text-2xl font-bold text-green-700">Sri Lanka's Trusted Smart Home Supplier</h2>
+              <h2 className="text-2xl font-bold text-green-700">{"Sri Lanka's Trusted Smart Home Supplier"}</h2>
             </div>
             
             <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-6">
               <p className="text-gray-700 leading-relaxed text-lg">
-                Welcome to Smart Dream Home, Sri Lanka's trusted supplier of smart switches, smart home gadgets, and home automation solutions. We specialize in bringing the latest smart home technology to your doorstep—making your home more convenient, secure, and energy-efficient.
+				  {"Welcome to Smart Dream Home, Sri Lanka's trusted supplier of smart switches, smart home gadgets, and home automation solutions. We specialize in bringing the latest smart home technology to your doorstep—making your home more convenient, secure, and energy-efficient."}
               </p>
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-red-50 p-6 rounded-lg text-center">
                 <div className="text-3xl mb-3">🏆</div>
-                <h3 className="text-lg font-semibold mb-2 text-red-800">Sri Lanka's No.1</h3>
+                <h3 className="text-lg font-semibold mb-2 text-red-800">{"Sri Lanka's No.1"}</h3>
                 <p className="text-gray-700 text-sm">Leading smart home solutions provider</p>
               </div>
 
