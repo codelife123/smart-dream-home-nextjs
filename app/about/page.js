@@ -183,7 +183,7 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-red-50 p-6 rounded-lg text-center">
                 <div className="text-3xl mb-3">🏆</div>
-                <h3 className="text-lg font-semibold mb-2 text-red-800">Sri Lanka&apos;s No.1"</h3>
+                <h3 className="text-lg font-semibold mb-2 text-red-800">Sri Lanka&apos;s No.1</h3>
                 <p className="text-gray-700 text-sm">Leading smart home solutions provider</p>
               </div>
 
