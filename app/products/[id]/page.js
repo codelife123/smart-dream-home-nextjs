@@ -6,6 +6,58 @@ import Link from "next/link";
 import Image from "next/image";
 import { PRODUCTS } from "../../data/products";
 import Footer from "../../components/Footer";
+import { ProductSchema } from "../../components/StructuredData";
+
+export async function generateMetadata({ params }) {
+  const productParam = Array.isArray(params?.id) ? params.id[0] : params?.id;
+  const slugify = (s) => s?.toLowerCase()?.trim()?.replace(/[^a-z0-9\s-]/g, "")?.replace(/\s+/g, "-") ?? "";
+  
+  const product = PRODUCTS.find(p => p.id === productParam) || 
+    PRODUCTS.find(p => slugify(p.name) === slugify(String(productParam || "")));
+
+  if (!product) {
+    return {
+      title: "Product Not Found | Smart Dream Home Lanka",
+      description: "The requested product could not be found. Browse our smart home devices collection.",
+    };
+  }
+
+  const currentPrice = Array.isArray(product.variants) && product.variants.length > 0 
+    ? Number(product.variants[0].price) 
+    : Number(product.price || 0);
+
+  const title = `${product.name} | Smart Dream Home Lanka | Smart Devices Sri Lanka`;
+  const description = `${product.desc} Buy ${product.name} in Sri Lanka. Price: Rs. ${currentPrice.toLocaleString()}. Island-wide delivery, warranty included. Smart home automation devices.`;
+
+  return {
+    title,
+    description,
+    keywords: `${product.name}, smart home Sri Lanka, WiFi devices Sri Lanka, home automation, smart switches Sri Lanka, ${product.name.toLowerCase()} price Sri Lanka, smart devices Colombo`,
+    openGraph: {
+      title: `${product.name} | Smart Dream Home Lanka`,
+      description: `${product.desc} Price: Rs. ${currentPrice.toLocaleString()}. Island-wide delivery, warranty included.`,
+      url: `https://www.smartdreamhomelanka.com/products/${product.slug || slugify(product.name)}`,
+      images: [
+        {
+          url: product.images && product.images[0] ? `https://www.smartdreamhomelanka.com${product.images[0]}` : "https://www.smartdreamhomelanka.com/images/smart_touch_panel.webp",
+          width: 1200,
+          height: 630,
+          alt: `${product.name} - Smart Dream Home Lanka`,
+        },
+      ],
+      type: "product",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} | Smart Dream Home Lanka`,
+      description: `${product.desc} Price: Rs. ${currentPrice.toLocaleString()}. Island-wide delivery, warranty included.`,
+      images: [product.images && product.images[0] ? `https://www.smartdreamhomelanka.com${product.images[0]}` : "https://www.smartdreamhomelanka.com/images/smart_touch_panel.webp"],
+    },
+    alternates: {
+      canonical: `https://www.smartdreamhomelanka.com/products/${product.slug || slugify(product.name)}`,
+    },
+  };
+}
 
 export default function ProductDetail() {
   const router = useRouter();
@@ -131,6 +183,7 @@ export default function ProductDetail() {
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
+      <ProductSchema product={product} />
       <div className="max-w-5xl mx-auto p-6">
         <div className="flex items-center justify-between mb-6">
           <button className="text-sm text-blue-600" onClick={() => router.push("/")}>← Back to Home</button>
@@ -162,7 +215,7 @@ export default function ProductDetail() {
                     >
                       <Image
                         src={product.images[activeImageIdx]}
-                        alt={product.name}
+                        alt={`${product.name} - Smart home device from Smart Dream Home Lanka`}
                         fill
                         sizes="(min-width: 768px) 520px, 100vw"
                         className="object-cover"
@@ -181,7 +234,7 @@ export default function ProductDetail() {
                       >
                         <Image
                           src={product.images[pendingImageIdx]}
-                          alt={product.name}
+                          alt={`${product.name} - Smart home device from Smart Dream Home Lanka`}
                           fill
                           sizes="(min-width: 768px) 520px, 100vw"
                           className="object-cover"
@@ -202,7 +255,7 @@ export default function ProductDetail() {
                     >
                       <Image
                         src={product.images[activeImageIdx]}
-                        alt="zoom"
+                        alt={`${product.name} zoom view - Smart home device from Smart Dream Home Lanka`}
                         fill
                         sizes="(min-width: 1024px) 520px, 100vw"
                         className="object-cover"
@@ -241,7 +294,7 @@ export default function ProductDetail() {
                         style={{width:88, height:88}}
                         aria-label={`Thumbnail ${idx+1}`}
                       >
-                        <Image src={src} alt="thumb" width={88} height={88} className="w-[88px] h-[88px] object-cover" />
+                        <Image src={src} alt={`${product.name} thumbnail ${idx+1} - Smart Dream Home Lanka`} width={88} height={88} className="w-[88px] h-[88px] object-cover" />
                       </button>
                     ))}
                   </div>

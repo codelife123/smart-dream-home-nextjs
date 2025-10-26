@@ -2,6 +2,36 @@
 
 import Link from "next/link";
 import Footer from "../components/Footer";
+import Head from "next/head";
+
+export const metadata = {
+  title: "Warranty & Returns Policy | Smart Dream Home Lanka | Smart Devices Sri Lanka",
+  description: "Comprehensive warranty and returns policy for smart home devices in Sri Lanka. 6-24 months warranty coverage, easy returns, island-wide support. Smart switches, door locks, sensors warranty terms.",
+  keywords: "warranty Sri Lanka, smart device warranty, returns policy Sri Lanka, smart home warranty, device warranty Colombo, smart switch warranty, door lock warranty Sri Lanka",
+  openGraph: {
+    title: "Warranty & Returns Policy | Smart Dream Home Lanka",
+    description: "Comprehensive warranty and returns policy for smart home devices in Sri Lanka. 6-24 months warranty coverage, easy returns, island-wide support.",
+    url: "https://www.smartdreamhomelanka.com/warranty",
+    images: [
+      {
+        url: "https://www.smartdreamhomelanka.com/images/smart_touch_panel.webp",
+        width: 1200,
+        height: 630,
+        alt: "Smart Dream Home Lanka Warranty Policy",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Warranty & Returns Policy | Smart Dream Home Lanka",
+    description: "Comprehensive warranty and returns policy for smart home devices in Sri Lanka. 6-24 months warranty coverage, easy returns, island-wide support.",
+    images: ["https://www.smartdreamhomelanka.com/images/smart_touch_panel.webp"],
+  },
+  alternates: {
+    canonical: "https://www.smartdreamhomelanka.com/warranty",
+  },
+};
 
 export default function WarrantyPage() {
   return (
