@@ -91,7 +91,8 @@ export function ProductSchema({ product }) {
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
-        "name": "Smart Dream Home Lanka"
+        "name": "Smart Dream Home Lanka",
+        "url": "https://www.smartdreamhomelanka.com"
       },
       "shippingDetails": {
         "@type": "OfferShippingDetails",
@@ -107,7 +108,8 @@ export function ProductSchema({ product }) {
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
           }
         }
-      }
+      },
+      "url": `https://www.smartdreamhomelanka.com/products/${product.slug || product.name.toLowerCase().replace(/\s+/g, '-')}`
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -125,8 +127,14 @@ export function ProductSchema({ product }) {
         "@type": "PropertyValue",
         "name": "Delivery",
         "value": "Island-wide"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Country",
+        "value": "Sri Lanka"
       }
-    ]
+    ],
+    "url": `https://www.smartdreamhomelanka.com/products/${product.slug || product.name.toLowerCase().replace(/\s+/g, '-')}`
   };
 
   if (Array.isArray(product.variants) && product.variants.length > 0) {

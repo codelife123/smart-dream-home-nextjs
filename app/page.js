@@ -7,10 +7,20 @@ import { PRODUCTS } from "./data/products";
 import NavMenus from "./components/NavMenus";
 import Footer from "./components/Footer";
 import VideoIntroSection from "./components/VideoIntroSection";
+import ProductCard from "./components/ProductCard";
+import ProductGridSkeleton from "./components/ProductGridSkeleton";
 
 export default function Home() {
   const router = useRouter();
   const [modalImgSrc, setModalImgSrc] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleViewDetails = (product) => {
+    const slugify = (s) => s?.toLowerCase()?.trim()?.replace(/[^a-z0-9\s-]/g, "")?.replace(/\s+/g, "-") ?? "";
+    const slug = product.slug || slugify(product.name);
+    router.push(`/products/${slug}`);
+  };
+
   useEffect(() => {
     const slides = document.querySelectorAll('#slides > div');
     let currentSlide = 0;
@@ -35,45 +45,10 @@ export default function Home() {
       return p.price ? `Rs. ${Number(p.price).toLocaleString()}` : 'Contact for price';
     }
 
-    function renderProducts(){
-      const grid = document.getElementById('productGrid');
-      if(!grid) return;
-      grid.innerHTML = '';
-      PRODUCTS.forEach(p=>{
-        const card = document.createElement('div');
-        card.className = 'bg-white rounded-2xl shadow p-4 text-center cursor-pointer product-card';
-        card.setAttribute('data-id', p.id);
-        card.setAttribute('data-name', p.name);
-        card.setAttribute('data-img', (p.images && p.images[0]) || '');
-        card.setAttribute('data-desc', p.desc || '');
-        if(Array.isArray(p.variants) && p.variants.length){
-          p.variants.forEach(v=>{
-            const label = (v.label||'').toLowerCase();
-            if(label.includes('1')) card.setAttribute('data-price-g1', String(v.price));
-            if(label.includes('2')) card.setAttribute('data-price-g2', String(v.price));
-            if(label.includes('3')) card.setAttribute('data-price-g3', String(v.price));
-            if(label.includes('4')) card.setAttribute('data-price-g4', String(v.price));
-          });
-        } else if(p.price){
-          card.setAttribute('data-price', String(p.price));
-        }
-
-        const imgSrc = (p.images && p.images[0]) || '';
-        const priceText = Array.isArray(p.variants) && p.variants.length
-          ? `${formatPriceRange(p)} (1-4 gang)`
-          : formatPriceRange(p);
-
-        card.innerHTML = `
-          <img src="${imgSrc}" alt="${p.name} - Smart home device from Smart Dream Home Lanka" class="mx-auto mb-3 rounded">
-          <h3 class="font-bold text-lg">${p.name}</h3>
-          <p class="text-gray-600">${priceText}</p>
-          <button class="viewDetail bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 mt-3">View Details</button>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    renderProducts();
+    // Products are now rendered using React components for better performance
+    
+    // Simulate loading time for better UX
+    setTimeout(() => setIsLoading(false), 1000);
 
     const productModal = document.getElementById('productModal');
     const closeProductModal = document.getElementById('closeProductModal');
@@ -267,7 +242,19 @@ export default function Home() {
 
       <section id="products" className="max-w-7xl mx-auto py-12 px-4">
         <h2 className="text-3xl font-bold text-center mb-8">Our Products</h2>
-        <div id="productGrid" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+        {isLoading ? (
+          <ProductGridSkeleton />
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {PRODUCTS.map((product) => (
+              <ProductCard 
+                key={product.id} 
+                product={product} 
+                onViewDetails={handleViewDetails}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       <section id="about" className="max-w-6xl mx-auto py-12 px-4">

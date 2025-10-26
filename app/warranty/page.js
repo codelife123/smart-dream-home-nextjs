@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import Footer from "../components/Footer";
-import Head from "next/head";
 
 export const metadata = {
   title: "Warranty & Returns Policy | Smart Dream Home Lanka | Smart Devices Sri Lanka",
